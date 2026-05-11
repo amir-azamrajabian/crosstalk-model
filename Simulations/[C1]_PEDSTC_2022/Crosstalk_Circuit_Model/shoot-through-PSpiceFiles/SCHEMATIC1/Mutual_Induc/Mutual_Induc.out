@@ -1,0 +1,97 @@
+
+**** 06/20/22 16:37:00 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Mutual_Induc"  [ e:\shoot through\pspice\model\1\shoot-through-pspicefiles\schematic1\mutual_induc.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Mutual_Induc.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\ASUS\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1us 0 10p 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SHOOT-THROUGH
+R_Rcirc         N00559 N43694  1  
+R_Rg         N03901 N00670  20  
+L_Lcirc         N43694 N43702  50nH  
+C_Cgs         N00770 N00670  3047p  
+C_Cgd         N00670 N00740  58.125p  
+C_Cds         N00770 N00740  107p  
+V_VDD         N00559 0  
++PULSE 0 400 0 83n 16n 100u 250u
+L_Ld         N43702 N00740  10.9nH  
+L_Lg         0 N03901  3nH  
+L_Ls         N00770 0  10nH  
+.PARAM  rise=127n lval=50n
+
+**** RESUMING Mutual_Induc.cir ****
+.END
+
+**** 06/20/22 16:37:00 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Mutual_Induc"  [ e:\shoot through\pspice\model\1\shoot-through-pspicefiles\schematic1\mutual_induc.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00559)    0.0000 (N00670)    0.0000 (N00740)    0.0000 (N00770)    0.0000     
+
+(N03901)    0.0000 (N43694)    0.0000 (N43702)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VDD        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 06/20/22 16:37:00 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Mutual_Induc"  [ e:\shoot through\pspice\model\1\shoot-through-pspicefiles\schematic1\mutual_induc.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        2.16
+  Total job time (using Solver 1)   =        1.09
+

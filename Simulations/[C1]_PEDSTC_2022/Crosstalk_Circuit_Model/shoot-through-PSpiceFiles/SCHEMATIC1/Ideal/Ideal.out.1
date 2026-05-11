@@ -1,0 +1,73 @@
+
+**** 09/24/21 09:00:21 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Ideal"  [ E:\Project\Pspice\Model\shoot-through-SCHEMATIC1-Ideal.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "shoot-through-SCHEMATIC1-Ideal.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 50n  0 
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+.INC ".\shoot-through-SCHEMATIC1.net" 
+
+
+
+**** INCLUDING shoot-through-SCHEMATIC1.net ****
+* source SHOOT-THROUGH
+V_VDD         N00559 0 650Vdc
+R_Rcirc         N00559 N00589  1  
+R_Rg         N03901 N00670  47  
+L_Lcirc         N00589 N00616  100nH  
+L_Lg         0 N03901  3nH  
+L_Ls         N00770 0  4nH  
+C_Cgs         N00770 N00670  10n  
+C_Cgd         N00670 N00740  0.08n  
+C_Cds         N00770 N00740  1n  
+X_TopSwitch         N00616 N00740 Sw_tClose PARAMS: tClose=0 ttran=0 Rclosed=0
++  Ropen=1Meg
+.PARAM  RVAL=1
+
+**** RESUMING shoot-through-SCHEMATIC1-Ideal.sim.cir ****
+.END
+
+ERROR -- RON or ROFF less than or equal to zero for VSWITCH model X_TopSwitch.Smod
+**** 09/24/21 09:00:21 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Ideal"  [ E:\Project\Pspice\Model\shoot-through-SCHEMATIC1-Ideal.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_TopSwitch.Smod 
+         RON    0            
+        ROFF    1.000000E+06 
+         VON    1            
+        VOFF    0            
+
+
+
+          JOB ABORTED
+
+          TOTAL JOB TIME             .02
+

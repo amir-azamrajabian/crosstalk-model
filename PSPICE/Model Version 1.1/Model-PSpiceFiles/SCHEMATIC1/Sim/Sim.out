@@ -1,0 +1,118 @@
+
+**** 09/23/23 11:53:08 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim"  [ e:\power electronics\pspice\model\model-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 4.3us 4us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MODEL
+C_CGE1         N11491 N11379  3803pF  TC=0,0 
+C_CGC1         N11379 N11281  27.8pF  TC=0,0 
+L_Le1         N11491 0  3nH  
+R_Rg1         0 N11473  20 TC=0,0 
+C_CCE1         N11491 N11281  183pF  TC=0,0 
+V_VModel         N11265 0   PWL   
++ FILE "E:\Power Electronics\MATLAB\Modeling\Input_Values.txt" 
+R_Rparasitic1         N11265 N11275  1 TC=0,0 
+L_Lg1         N11473 N11379  3nH  
+L_Lparasitic1         N11275 N11281  53nH  
+D_D6         N11491 N11281 Dbreak 
+L_LloadModel1         N11281 0  40uH  
+
+**** RESUMING Sim.cir ****
+.END
+
+**** 09/23/23 11:53:08 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim"  [ e:\power electronics\pspice\model\model-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 09/23/23 11:53:08 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim"  [ e:\power electronics\pspice\model\model-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N11265)  400.0000 (N11275)    0.0000 (N11281)    0.0000 (N11379)    0.0000     
+
+(N11473)    0.0000 (N11491)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VModel    -4.000E+02
+
+    TOTAL POWER DISSIPATION   1.60E+05  WATTS
+
+
+WARNING(ORPSIM-16596): PWL File \Power Electronics\MATLAB\Modeling\Input_Values.txt will not be used for simulation because it has two or more time-value pairs listed for the same time. The corrected file Input_Values_mod.txt generated inside the profile will be used
+
+
+          JOB CONCLUDED
+
+**** 09/23/23 11:53:08 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim"  [ e:\power electronics\pspice\model\model-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       51.31
+  Total job time (using Solver 1)   =        3.75
+

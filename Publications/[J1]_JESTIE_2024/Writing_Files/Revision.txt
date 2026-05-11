@@ -1,0 +1,48 @@
+-------------------------------------------------------------------------------
+Revision 1
+-------------------------------------------------------------------------------
+Reviewer 1:
+This article takes IGBT devices as an example to study the impact of gate resistance and emitter inductance on crosstalk, and provides a method to determine the optimal parameters. This research has certain significance for circuit design, but there are still some issues that the author needs to answer.
+
+1) The author mentioned that the model in this article is also applicable to MOSFET, but did not give a detailed explanation and no experimental verification. Please add the reason why the model is suitable for MOSFET and conduct experimental verification.
+2) Please explain what software was used to obtain the Simulation curves in Figures 9 and 10. The results are quite different from the Analytical Model. Please explain the reason for the difference with the Analytical Model.
+3) Please explain how the parasitic components in Table 2 are measured.
+4) There is less experimental verification data. Please add experimental results of the impact of different gate resistors on crosstalk and compare with model calculations.
+
+-------------------------------------------------------------------------------
+Reviewer 2:
+Dear authors, it’s a great pleasure to review your submission. The paper is well written and organized, but the novelty is relatively poor, and the experiment work is not sufficient. Here are my several questions and comments.
+
+1) The abstract should be carefully modified to highlight the main contribution, in which some verification results should be given out.
+2) The differences of the proposed model in this article from that in previous articles should be given out. The consideration of parasitic elements seems not to be novel, and is common in SiC and GaN models. Why the previous IGBT models didn’t consider the parasitic elements?
+3) From Fig.10, the gate-emitter peak voltage increases with the increase of the gate resistance, while in Fig.13, the trend is quite different that the gate-emitter peak voltage decreases with the increase of the gate resistance. Please explain the reason in detail.
+4) The accuracy of the proposed model seems not good from Fig.9, only simulation comparison with the proposed model is conducted, some experiment results should also be used to verify the model accuracy.
+5) In experiment verification, the results of different emitter inductances and gate-emitter resistances should be given out.
+
+-------------------------------------------------------------------------------
+Reviewer 3:
+In this paper, a comprehensive model including the parasitic elements of the phase-leg setup is built, followed by a mathematical circuit model for detailed analysis. Moreover, the authors study the influence of low-side IGBT gate resistance and emitter inductance on the crosstalk. Some comments are made below.
+
+1) Fig.2 Why VCE-H starts to drop at t1? The voltage won’t drop until t2 in ideal cases because of the diode clamping. If you consider the influence of the inductance voltage, the voltage drop is also not linear.
+2) Fig.4 Why the current continues to rise after the pulse?
+3) Page 4 Line 3. At time point t3, a significant increment occurs as the voltage across the low-side diode starts to rise. Are you sure it is t3?
+4) Page 5 Line 32. What’ s the meaning of Co-dependency of Low-Side Parasitic Inductance? Just both gate resistance and emitter inductance will influence the crosstalk?
+5) Page 5 Line 55.Fig. 11 illustrates this observation. Clearly, as LE-L increases, crosstalk fades away. But in fact, the negative crosstalk become more serious as LE-L increases
+6) Page 5 Line 7. Augmenting the low-side emitter inductance results in an increase in the negative peak of the gate-emitter voltage as shown in Fig. 11, while this phenomenon can be advantageous for the CTR. Can you explain how do you get such a conclusion?
+7) Are Fig.13 Fig.14 the results of the positive crosstalk? As shown in Fig. 10, as the gate resistance value increases, the likelihood of positive crosstalk also intensifies, but that’s not the case in Fig.13.
+8) Page 6 Line 43. Therefore, the optimal range, as indicated by Fig. 15, falls between 3 nH and 50 nH. This range provides a favorable balance that designers can readily achieve. What’s the reality meaning of this optimal range since current device designs are all pursing smaller parasitic inductance? What’s more, some factors like diode reverse recovery will induce voltage during the switching instant and influence the crosstalk, which may finally influence the optimal range. And is it appropriate to only consider the GE peak voltage to get the optimal range?
+
+-------------------------------------------------------------------------------
+Revision 2
+-------------------------------------------------------------------------------
+Reviewer 1:
+The authors proposed a crosstalk model that considers inductive loads and highlights gate-side parasitic parameters. The influence of gate resistance and the emitter parasitic inductance of the low-side switch on crosstalk is analyzed. The analysis results provide guidance for crosstalk suppression. However, the following issues need to be addressed:
+
+1) We do not recommend placing the comparison of the proposed model with models from other papers before the introduction of the model. This makes the structure of the paper appear strange.
+2) From Figure 14, the variation of emitter inductance with different gate resistances shows different trends. When Rg is small, a larger emitter inductance leads to a higher VGE. However, when Rg is large, the relationship between VGE and emitter inductance changes. Could the authors explain this phenomenon?
+3) Could the authors add a 3D plot of negative VGE versus gate resistance and emitter inductance? This would be meaningful for the design of the gate oxide field (GOF).
+4) The title of Section III is "IMPACT OF LOW-SIDE GATE RESISTANCE". However, emitter inductance is also analyzed in this section. The authors should consider changing the title to better reflect the content.
+5) According to the results in Figure 20, an increase in emitter inductance leads to a decrease in the positive value of the gate-emitter voltage (VGE-L). How can this be explained using the derived theory?
+6) The authors need to experimentally verify the influence of emitter inductance on the maximum gate-emitter voltage as shown in Figure 15.
+
+-------------------------------------------------------------------------------

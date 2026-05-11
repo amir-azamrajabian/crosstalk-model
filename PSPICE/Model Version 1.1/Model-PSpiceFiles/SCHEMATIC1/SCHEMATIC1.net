@@ -1,0 +1,13 @@
+* source MODEL
+C_CGE1         N11491 N11379  3803pF  TC=0,0 
+C_CGC1         N11379 N11281  27.8pF  TC=0,0 
+L_Le1         N11491 0  3nH  
+R_Rg1         0 N11473  20 TC=0,0 
+C_CCE1         N11491 N11281  183pF  TC=0,0 
+V_VModel         N11265 0   PWL   
++ FILE "E:\Power Electronics\MATLAB\Modeling\Input_Values.txt" 
+R_Rparasitic1         N11265 N11275  1 TC=0,0 
+L_Lg1         N11473 N11379  3nH  
+L_Lparasitic1         N11275 N11281  53nH  
+D_D6         N11491 N11281 Dbreak 
+L_LloadModel1         N11281 0  40uH  

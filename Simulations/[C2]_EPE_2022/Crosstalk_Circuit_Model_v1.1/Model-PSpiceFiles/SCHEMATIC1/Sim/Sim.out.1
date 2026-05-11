@@ -1,0 +1,142 @@
+
+**** 08/13/23 12:59:44 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim"  [ e:\power electronics\pspice\model\model-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 4.3us 4us 1ns 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MODEL
+L_Le1         N11529 0  3nH  
+R_Rg1         0 N11473  20 TC=0,0 
+V_VModel         N11265 0   PWL   
++ FILE "E:\Power Electronics\MATLAB\Modeling\Input_Values.txt" 
+R_Rparasitic1         N11265 N11275  1 TC=0,0 
+L_Lg1         N11473 N11479  3nH  
+L_Lparasitic1         N11275 N11281  50nH  
+Z_Zlowside         N11281 N11479 N11529 IXGH60N60C2     
+
+**** RESUMING Sim.cir ****
+.END
+
+**** 08/13/23 12:59:44 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim"  [ e:\power electronics\pspice\model\model-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     IGBT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IXGH60N60C2     
+               NIGBT           
+          VT    4.1942       
+         MUN    5.500000E+03 
+         MUP  400            
+         BVF    6.234        
+          KF     .5005       
+         CGS   20.043000E-09 
+        COXD   20.906000E-09 
+         VTD   -5            
+         TAU   69.608000E-09 
+          KP   24.828        
+        AREA   37.500000E-06 
+         AGD   15.000000E-06 
+
+
+**** 08/13/23 12:59:44 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim"  [ e:\power electronics\pspice\model\model-pspicefiles\schematic1\sim.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N11265)  400.0000 (N11275)  400.0000 (N11281)  400.0000 (N11473)    0.0000     
+
+(N11479)    0.0000 (N11529)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VModel    -8.027E-05
+
+    TOTAL POWER DISSIPATION   3.21E-02  WATTS
+
+
+WARNING(ORPSIM-16596): PWL File \Power Electronics\MATLAB\Modeling\Input_Values.txt will not be used for simulation because it has two or more time-value pairs listed for the same time. The corrected file Input_Values_mod.txt generated inside the profile will be used
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  122.2E-15.
+         Time step =  317.7E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N11529)                 =   -351.09V  \     23.36V
+    V(N11473)                 =     9.51uV  \    15.30uV
+    V(N11479)                 =   -351.09V  \     23.36V
+    V(N11281)                 =     48.91V  \    423.36V
+
+  These supply currents failed to converge:
+
+    I(L_Le1)                  =   475.60nA  \   765.21nA
+    I(L_Lg1)                  =  -475.59nA  \  -765.21nA
+    I(L_Lparasitic1)          =   -28.33nA  \   -45.71nA
+    I(V_VModel)               =    28.33nA  \    45.71nA
+
+  These devices failed to converge:
+    Z_Zlowside 
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N11265)  400.0000 (N11275)  400.0000 (N11281)   48.9060 (N11473) 9.512E-06     
+
+(N11479) -351.0900 (N11529) -351.0900 
+
+
+**** Interrupt ****

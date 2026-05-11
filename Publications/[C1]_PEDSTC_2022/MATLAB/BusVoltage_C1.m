@@ -1,0 +1,25 @@
+clc; clear; close;
+Vpg = [2.9338 3.6673 4.4007 5.1342 5.8676 6.6011 7.3346 8.0680 8.8015 9.535 10.268 11.002 11.735];
+ton = [0 0 0 3.17 4.24 20.991 45.207 46.065 47.597 48.869 49.96 50.899 57.935]*10^(-9);
+% ton_ana = [0,0,0,3.84925886296485e-09,2.14458708079470e-08,3.11606669859059e-08,3.90424827529292e-08,4.07532644698024e-08,4.20974501044886e-08,4.32583376980811e-08,4.55801128852663e-08,4.98570671774494e-08,5.21788423646346e-08];
+Vpg_ana = [2.98690873542137,3.73363591927682,4.48036310313182,5.22709028698682,5.97381747084273,6.72054465469591,7.46727183855364,8.21399902240773,8.96072620626364,9.70745339011774,10.4541805739736,11.2009077578277,11.9476349416855];
+Esc_ana = [0,0,0,2.39709672654579e-06,0.000104942748900753,0.000318132689620846,0.000646969189497579,0.000977173318035442,0.00136522452221631,0.00181372804956872,0.00239163271870422,0.00319382036321712,0.00400177863895902];
+Vbus = 200: 50: 800;
+gfs = 14; Vth = 5.1;
+Esc = gfs.*(Vpg - Vth).*Vbus.*ton;
+figure(1);
+plot(Vbus, Vpg, 'r-', 'LineWidth', 3);
+hold on;
+plot(Vbus, Vpg_ana, 'b--', 'LineWidth', 3);
+title('Effect of DC-Bus Voltage on Spike Gate-Emitter Voltage');
+xlabel('DC-Bus Voltage (V)');
+ylabel('Gate-Emitter Peak Voltage (V)');
+legend('SPICE Simulation', 'Analytic Model');
+figure(2);
+plot(Vbus, Esc, 'r-', 'LineWidth', 3);
+hold on;
+plot(Vbus, Esc_ana,  'b--', 'LineWidth', 3)
+title('Effect of DC-Bus Voltage on Crosstalk Energy');
+xlabel('DC-Bus Voltage (V)');
+ylabel('Crosstalk Energy (J)');
+legend('SPICE Simulation', 'Analytic Model');

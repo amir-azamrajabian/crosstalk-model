@@ -1,0 +1,24 @@
+clear; close; clc;
+Rg = 20: 1: 40;
+tr = Rg/20*127;
+Vges = [2.4171 2.4362 2.4579 2.4780 2.4960 2.5124 2.5272 2.5415 2.5566 2.5710 2.5845 2.5968 2.6082 2.6191 2.6300 2.6408 2.6510 2.6607 2.6697 2.6783 2.6866];
+Vgea = [2.5423 2.5567 2.5649 2.5846 2.5997 2.6126 2.6161 2.6264 2.6354 2.6415 2.6549 2.6659 2.6698 2.6710 2.6764 2.6802 2.6859 2.6901 2.6916 2.6998 2.7126];
+figure(1);
+plot(tr, Vges, 'b-','LineWidth', 4);
+hold on; 
+plot(tr, Vgea, 'r--','LineWidth', 4);
+grid on;
+legend('Analytical Model', 'Main Circuit Simulation');
+xlabel('Rise time (ns)');
+ylabel('Gate-Emitter Voltage (V)');
+
+Vgec = [2.88E+00	2.74E+00	2.62E+00	2.59E+00	2.54E+00	2.43E+00	2.34E+00	2.28E+00	2.25E+00	2.18E+00	2.10E+00	2.04E+00	2.01E+00	1.96E+00	1.90E+00	1.84E+00	1.82E+00	1.78E+00	1.73E+00	1.68E+00	1.65E+00];
+Vgeb = [2.42E+00	2.38E+00	2.35E+00	2.31E+00	2.28E+00	2.25E+00	2.22E+00	2.20E+00	2.17E+00	2.14E+00	2.12E+00	2.09E+00	2.07E+00	2.05E+00	2.02E+00	2.00E+00	1.98E+00	1.96E+00	1.94E+00	1.92E+00	1.90E+00];
+figure(2);
+plot(tr, Vgec, 'b-','LineWidth', 4);
+hold on;
+plot(tr, Vgeb, 'r--','LineWidth', 4);
+grid on;
+legend('Analytical Model', 'Main Circuit Simulation');
+xlabel('Rise time (ns)');
+ylabel('Gate-Emitter Voltage (V)');

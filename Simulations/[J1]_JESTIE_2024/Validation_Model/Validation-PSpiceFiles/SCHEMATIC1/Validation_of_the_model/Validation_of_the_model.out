@@ -1,0 +1,187 @@
+
+**** 02/25/24 09:02:13 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Validation_of_the_model"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\validat
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Validation_of_the_model.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../validation-pspicefiles/validation.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 4.3u 4u 100p 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source VALIDATION
+V_Vbus         N00440 0 {VBus}
+R_Rcircuit         N00440 N00447  1 TC=0,0 
+R_RgHighside         N00560 N00451  {Rg} TC=0,0 
+L_Lcircuit         N00447 N00571  {Lcircuit}  
+L_Lghighside         N00451 N00459  {Lg}  
+L_LgLowside         N00455 N56313  {Lg}  
+R_RgLowside         0 N00455  {Rg} TC=0,0 
+V_VgHighside         N00560 N00592  
++PULSE 0 20 0 1ns 1ns 2us 4us
+L_Lload         N00592 0  {Lload}  
+R_Rparasitic         N04710 N04720  1 TC=0,0 
+R_Rg         0 N04912  {Rg} TC=0,0 
+L_LeLowside1         N04976 0  {Le}  
+L_Lg         N04912 N43438  {Lg}  
+L_Lparasitic         N04720 N04726  {Lcircuit}  
+V_VDC         N04710 0 {VBus}
+D_D5         N04976 N05851 Dbreak 
+L_LloadModel         N04726 0  {Lload}  
+D_D6         N10780 N10582 Dbreak 
+L_Lg1         N10760 N26026  {Lg}  
+L_Lelowside2         N10780 0  {Le}  
+R_Rg1         0 N10760  {Rg} TC=0,0 
+R_Rparasitic1         N10500 N10510  1 TC=0,0 
+L_Lparasitic1         N10510 N10516  {Lcircuit}  
+L_LloadModel1         N10516 0  {Lload}  
+C_CCE1         N10780 N10582  183pF  TC=0,0 
+C_CGC1         N26026 N10582  71.76pF  TC=0,0 
+C_CGE1         N10780 N26026  3793pF  TC=0,0 
+V_V1         N10500 0 {VBus}
+L_LeHighside1         N04726 N05851  {Le}  
+L_LeHighside2         N10516 N10582  {Le}  
+D_D7         N01013 N00571 Dbreak 
+D_D8         N50407 N00592 Dbreak 
+L_LeHighside         N01013 N00592  {Le}  
+L_LeLowside         N50407 0  {Le}  
+Z_Z1         N00571 N00459 N01013 IXGH60N60C2     
+Z_Z2         N00592 N56313 N50407 IXGH60N60B2     
+Z_Z7         N05851 N43438 N04976 IXGH60N60B2     
+.PARAM  lcircuit=50nh lg=3nh rg=20 rload=16 lload=40uh vbus=400vdc le=3nh
+
+**** RESUMING Validation_of_the_model.cir ****
+.END
+
+**** 02/25/24 09:02:13 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Validation_of_the_model"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\validat
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 02/25/24 09:02:13 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Validation_of_the_model"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\validat
+
+
+ ****     IGBT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IXGH60N60C2     IXGH60N60B2     
+               NIGBT           NIGBT           
+          VT    5              20            
+         MUN    5.500000E+03    5.500000E+03 
+         MUP  400             400            
+         BVF    6.234           6.234        
+          KF     .5005           .5005       
+         CGS    3.793000E-09    3.793000E-09 
+        COXD  524.030000E-12  524.030000E-12 
+         VTD   -5              -5            
+         TAU   69.608000E-09   69.608000E-09 
+          KP   24.828          24.828        
+        AREA   37.500000E-06   37.500000E-06 
+         AGD   15.000000E-06   15.000000E-06 
+
+
+**** 02/25/24 09:02:13 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Validation_of_the_model"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\validat
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)    0.0000 (N00455)    0.0000     
+
+(N00459)    0.0000 (N00560)    0.0000 (N00571)  400.0000 (N00592)    0.0000     
+
+(N01013)    0.0000 (N04710)  400.0000 (N04720)    0.0000 (N04726) 76.38E-30     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407)    0.0000     
+
+(N56313)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside   0.000E+00
+    V_VDC       -4.000E+02
+    V_V1        -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+Reducing minimum delta to make the circuit converge.
+
+
+          JOB CONCLUDED
+
+**** 02/25/24 09:02:13 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Validation_of_the_model"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\validat
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =      165.56
+  Total job time (using Solver 1)   =        9.39
+

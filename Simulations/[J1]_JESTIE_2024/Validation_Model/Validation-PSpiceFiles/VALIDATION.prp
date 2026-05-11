@@ -1,0 +1,86 @@
+("irfp460"
+    ("Creator"	"Device property file created by Property Controller")
+    ("device_info"
+        ("SYMBOL_NAME"	"nmos")
+        ("MODEL_TYPE"	"514")
+    )
+    ("model_params"
+        ("level_0")
+    )
+    ("device_pre_smoke"
+        ("TERM_ID"	"D")
+        ("TERM_IG"	"G")
+        ("NODE_VD"	"D")
+        ("NODE_VG"	"G")
+        ("NODE_VS"	"S")
+        ("DERATE_TYPE"	"NMOS")
+    )
+    ("device_max_ops"
+        ("IG"	"500n")
+        ("ID"	"20")
+        ("VDS"	"500")
+        ("VGSF"	"20")
+        ("VGSR"	"20")
+        ("PDM"	"250")
+        ("TJ"	"150")
+        ("RJC"	"0.5")
+        ("RCA"	"39.5")
+    )
+)
+("ixgh60n60b2"
+    ("Creator"	"Device property file created by Property Controller")
+    ("device_info"
+        ("SYMBOL_NAME"	"nigbt")
+        ("MODEL_TYPE"	"613")
+    )
+    ("model_params"
+        ("level_0")
+    )
+    ("device_pre_smoke"
+        ("TERM_IC"	"C")
+        ("TERM_IG"	"G")
+        ("NODE_VC"	"C")
+        ("NODE_VG"	"G")
+        ("NODE_VE"	"E")
+        ("DERATE_TYPE"	"IGBT")
+    )
+    ("device_max_ops"
+        ("IC"	"75.0")
+        ("VCG"	"600")
+        ("VCE"	"600")
+        ("VGEF"	"20")
+        ("VGER"	"20")
+        ("PDM"	"500")
+        ("TJ"	"150")
+        ("RJC"	"0.25")
+    )
+)
+("ixgh60n60c2"
+    ("Creator"	"Device property file created by Property Controller")
+    ("device_info"
+        ("SYMBOL_NAME"	"nigbt")
+        ("MODEL_TYPE"	"613")
+    )
+    ("model_params"
+        ("level_0"
+        )
+    )
+    ("device_pre_smoke"
+        ("TERM_IC"	"C")
+        ("TERM_IG"	"G")
+        ("NODE_VC"	"C")
+        ("NODE_VG"	"G")
+        ("NODE_VE"	"E")
+        ("DERATE_TYPE"	"IGBT")
+    )
+    ("device_max_ops"
+        ("IC"	"75.0")
+        ("VCG"	"600")
+        ("VCE"	"600")
+        ("VGEF"	"20")
+        ("VGER"	"20")
+        ("PDM"	"480")
+        ("TJ"	"150")
+        ("RJC"	"0.26")
+    )
+)

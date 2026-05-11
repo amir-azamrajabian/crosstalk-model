@@ -1,0 +1,327 @@
+
+**** 07/21/24 19:02:54 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Resonance"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\resonance.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Resonance.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../validation-pspicefiles/validation.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 4.20u 4u 100p 
+.STEP LIN PARAM Le 10n 50n 1n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source VALIDATION
+V_Vbus         N00440 0 {VBus}
+R_Rcircuit         N00440 N00447  1 TC=0,0 
+R_RgHighside         N00560 N00451  {Rg} TC=0,0 
+L_Lcircuit         N00447 N00571  {Lcircuit}  
+L_Lghighside         N00451 N00459  {Lg}  
+L_LgLowside         N00455 N56313  {Lg}  
+R_RgLowside         0 N00455  {Rg} TC=0,0 
+V_VgHighside         N00560 N00592  
++PULSE 0 20 0 1ns 1ns 2us 4us
+L_Lload         N00592 0  {Lload}  
+R_Rparasitic         N04710 N04720  1 TC=0,0 
+R_Rg         0 N04912  {Rg} TC=0,0 
+L_LeLowside1         N04976 0  {Le}  
+L_Lg         N04912 N43438  {Lg}  
+L_Lparasitic         N04720 N04726  {Lcircuit}  
+V_VDC         N04710 0 {VBus}
+D_D5         N04976 N05851 Dbreak 
+L_LloadModel         N04726 0  {Lload}  
+D_D6         N10780 N10582 Dbreak 
+L_Lg1         N10760 N26026  {Lg}  
+L_Lelowside2         N10780 0  {Le}  
+R_Rg1         0 N10760  {Rg} TC=0,0 
+R_Rparasitic1         N10500 N10510  1 TC=0,0 
+L_Lparasitic1         N10510 N10516  {Lcircuit}  
+L_LloadModel1         N10516 0  {Lload}  
+C_CCE1         N10780 N10582  183pF  TC=0,0 
+C_CGC1         N26026 N10582  71.76pF  TC=0,0 
+C_CGE1         N10780 N26026  3793pF  TC=0,0 
+L_LeHighside1         N04726 N05851  {Le}  
+L_LeHighside2         N10516 N10582  {Le}  
+D_D7         N01013 N00571 Dbreak 
+D_D8         N50407 N00592 Dbreak 
+L_LeHighside         N01013 N00592  3nH  
+L_LeLowside         N50407 0  {Le}  
+Z_Z1         N00571 N00459 N01013 IXGH60N60C2     
+Z_Z7         N05851 N43438 N04976 IXGH60N60B2     
+L_Lcircuit1         N106072 N110519  {Lcircuit}  
+L_LeHighside3         N110530 N106294  {Le}  
+V_VgHighside1         N106186 N106294  
++PULSE 0 20 0 1ns 1ns 2us 4us
+R_RgLowside1         0 N106444  {Rg} TC=0,0 
+L_LgLowside1         N106444 N106450  {Lg}  
+R_RgHighside1         N106186 N106196  {Rg} TC=0,0 
+R_Rcircuit1         N106062 N106072  1 TC=0,0 
+V_Vbus1         N106062 0 {VBus}
+L_Lghighside1         N106196 N110526  {Lg}  
+L_LeLowside3         N110371 0  {Le}  
+L_Lload1         N106294 0  {Lload}  
+M_M5         N110519 N110526 N110530 N110530 IRFP460
+M_M6         N106294 N106450 N110371 N110371 IRFP460
+D_D9         N110530 N110519 Dbreak 
+D_D10         N110371 N106294 Dbreak 
+Z_Z8         N00592 N56313 N50407 IXGH60N60C2     
+V_Vbus2         N10500 0 {VBus}
+.PARAM  lcircuit=100nh lg=3nh rg=6 vbus=400vdc lload=40uh rload=16 le=3nh
+
+**** RESUMING Resonance.cir ****
+.END
+
+**** 07/21/24 19:02:54 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Resonance"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\resonance.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 07/21/24 19:02:54 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Resonance"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\resonance.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRFP460         
+               NMOS            
+       LEVEL    3            
+           L    2.000000E-06 
+           W    1.9          
+         VTO    3.248        
+          KP   20.650000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          RD     .2303       
+          RS    2.041000E-03 
+          RG    1.556        
+         RDS    2.222000E+06 
+          IS   96.300000E-12 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD    5.156000E-09 
+          CJ    0            
+        CJSW    0            
+          TT  670.000000E-09 
+        CGSO    1.947000E-09 
+        CGDO  135.800000E-12 
+        CGBO    0            
+         TOX  100.000000E-09 
+          XJ    0            
+       UCRIT   10.000000E+03 
+       DELTA    0            
+         ETA    0            
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 07/21/24 19:02:54 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Resonance"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\resonance.sim ] 
+
+
+ ****     IGBT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IXGH60N60C2     IXGH60N60B2     
+               NIGBT           NIGBT           
+          VT   10             100            
+         MUN    5.500000E+03    5.500000E+03 
+         MUP  400             400            
+         BVF    6.234           6.234        
+          KF     .5005           .5005       
+         CGS    3.793000E-09    3.803000E-09 
+        COXD    1.665900E-09    1.665900E-09 
+         VTD   -5              -5            
+         TAU   69.608000E-09   69.608000E-09 
+          KP   24.828          24.828        
+        AREA   37.500000E-06   37.500000E-06 
+         AGD   15.000000E-06   15.000000E-06 
+
+
+**** 07/21/24 19:02:54 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Resonance"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\resonance.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   10.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)    0.0000 (N00455)    0.0000     
+
+(N00459)    0.0000 (N00560)    0.0000 (N00571)  400.0000 (N00592)    0.0000     
+
+(N01013)    0.0000 (N04710)  400.0000 (N04720)    0.0000 (N04726) 213.0E-30     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407)    0.0000     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 204.8E-21                   (N106196) 204.8E-21                       
+
+(N106294) 204.8E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 204.8E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside   0.000E+00
+    V_VDC       -4.000E+02
+    V_VgHighside1   1.851E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  1.000E-12.
+         Time step =  320.6E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =     3.647V  \    19.78mV
+    V(N00451)                 =     3.647V  \    19.76mV
+    V(N00571)                 =    113.23V  \    400.01V
+    V(N00459)                 =   -286.77V  \     9.62mV
+    V(N56313)                 =     3.627V  \  -222.40uV
+    V(N00592)                 =     3.627V  \  -222.41uV
+    V(N04726)                 =   223.41uV  \   622.94pV
+    V(N10516)                 =   224.28uV  \   622.93pV
+    V(N01013)                 =   -286.77V  \     9.62mV
+    V(N50407)                 =     3.627V  \  -222.40uV
+    V(N110519)                =    348.51V  \    400.02V
+    V(N110530)                =    -51.49V  \    14.70mV
+    V(N106294)                =   222.84mV  \  -339.83uV
+    V(N106186)                =   242.84mV  \    19.66mV
+    V(N106450)                =   222.84mV  \  -339.62uV
+    V(N106196)                =   242.83mV  \    19.65mV
+    V(N110526)                =    -51.49V  \    14.70mV
+    V(N110371)                =   222.84mV  \  -339.79uV
+
+  These supply currents failed to converge:
+
+    I(L_Lghighside)           =    3.626uA  \    3.378uA
+    I(L_LgLowside)            =    70.89nA  \    73.99nA
+    I(L_LeHighside)           =    83.30uA  \    83.55uA
+    I(L_LeLowside)            =   -21.31nA  \   -22.24nA
+    I(L_LgLowside1)           =   112.79nA  \   112.98nA
+    I(L_Lghighside1)          =    1.695uA  \    1.651uA
+    I(L_LeLowside3)           =   -33.92nA  \   -33.98nA
+    I(V_VgHighside)           =   -3.626uA  \   -3.378uA
+    I(V_VgHighside1)          =   -1.695uA  \   -1.651uA
+
+  These devices failed to converge:
+    D_D7      D_D9      M_M5      M_M6      Z_Z1      Z_Z7      
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)    3.6467 (N00455)-425.3E-09     
+
+(N00459) -286.7700 (N00560)    3.6467 (N00571)  113.2300 (N00592)    3.6267     
+
+(N01013) -286.7700 (N04710)  400.0000 (N04720)-113.7E-15 (N04726) 223.4E-06     
+
+(N04912) 232.4E-15 (N04976)-192.4E-09 (N05851)-192.4E-09 (N10500)  400.0000     
+
+(N10510)-113.7E-15 (N10516) 224.3E-06 (N10582) 766.7E-09 (N10760) 237.4E-15     
+
+(N10780) 766.7E-09 (N26026) 766.7E-09 (N43438)-192.4E-09 (N50407)    3.6267     
+
+(N56313)    3.6267 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186)     .2428                   (N106196)     .2428                       
+
+(N106294)     .2228                   (N106444)-676.7E-09                       
+
+(N106450)     .2228                   (N110371)     .2228                       
+
+(N110519)  348.5100                   (N110526)  -51.4920                       
+
+(N110530)  -51.4920                   
+
+
+**** Interrupt ****

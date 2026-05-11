@@ -1,0 +1,81 @@
+
+**** 09/24/21 17:15:23 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Crosstalk"  [ E:\Project\Pspice\Model\shoot-through-schematic1-crosstalk.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "shoot-through-schematic1-crosstalk.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 4u 0 100p 
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+.INC ".\shoot-through-SCHEMATIC1.net" 
+
+
+
+**** INCLUDING shoot-through-SCHEMATIC1.net ****
+* source SHOOT-THROUGH
+R_Rcirc         N00559 N00589  1  
+V_VDD         N00559 0  
++PULSE 0 650 1u 90n 90n 100u 250u
+R_Rg         N03901 N00670  5  
+L_Lcirc         N00589 N00740  500nH  
+L_Lg         0 N03901  3nH  
+L_Ls         N00770 0  4nH  
+C_Cgs         N00770 N00670  3n  
+C_Cgd         N00670 N00740  100p  
+C_Cds         N00770 N00740  50p  
+.PARAM  RVAL=1
+
+**** RESUMING shoot-through-schematic1-crosstalk.sim.cir ****
+.END
+
+**** 09/24/21 17:15:23 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Crosstalk"  [ E:\Project\Pspice\Model\shoot-through-schematic1-crosstalk.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00559)    0.0000 (N00589)    0.0000 (N00670)    0.0000 (N00740)    0.0000     
+
+(N00770)    0.0000 (N03901)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VDD        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            2.08
+

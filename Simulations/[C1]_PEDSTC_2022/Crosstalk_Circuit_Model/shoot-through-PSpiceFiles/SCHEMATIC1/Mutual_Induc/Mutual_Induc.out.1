@@ -1,0 +1,286 @@
+
+**** 06/13/22 21:43:45 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Mutual_Induc"  [ e:\shoot through\pspice\model\1\shoot-through-pspicefiles\schematic1\mutual_induc.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Mutual_Induc.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\ASUS\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1us 0 100p 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SHOOT-THROUGH
+R_Rcirc         N00559 N43694  1  
+R_Rg         N03901 N00670  20  
+L_Lcirc         N43694 N43702  50nH  
+C_Cgs         N00770 N00670  3614p  
+C_Cgd         N00670 N00740  53.75p  
+C_Cds         N00770 N00740  204p  
+V_VDD         N00559 0  
++PULSE 0 400 0 90n 16n 100u 250u
+L_Ld         N43702 N00740  10.9nH  
+L_Lg         0 N03901  3nH  
+L_Ls         N00770 0  10nH  
+Kn_K1         L_Ld L_Lg     -1
+Kn_K2         L_Lg L_Ls     -1
+Kn_K3         L_Ld L_Ls     -1
+.PARAM  lval=50n
+
+**** RESUMING Mutual_Induc.cir ****
+.END
+
+**** 06/13/22 21:43:45 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Mutual_Induc"  [ e:\shoot through\pspice\model\1\shoot-through-pspicefiles\schematic1\mutual_induc.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00559)    0.0000 (N00670)    0.0000 (N00740)    0.0000 (N00770)    0.0000     
+
+(N03901)    0.0000 (N43694)    0.0000 (N43702)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VDD        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  640.1E-12.
+         Time step =  291.7E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N03901)                 =    10.00GV  \   -1.378GV
+    V(N00670)                 =    10.00GV  \  -811.53MV
+    V(N43702)                 =   -10.00GV  \    4.087GV
+    V(N00770)                 =    10.00GV  \  -811.26MV
+    V(N00740)                 =    10.00GV  \  -812.16MV
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00559)    2.8450 (N00670) 10.00E+09 (N00740) 10.00E+09 (N00770) 10.00E+09     
+
+(N03901) 10.00E+09 (N43694) 6.580E+06 (N43702)-10.00E+09 
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.001
+**** Param: ABSTOL = 1e-12
+**** Param: VNTOL = 1e-06
+**** Param: GMIN = 1e-12
+**** Param: TSTOP = 1e-06
+**** Param: TMAX = 1e-10
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 100
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-10
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+Convergence problem in transient analysis at Time =  640.1E-12
+         Time step =  291.7E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N03901)                 =    10.00GV  \   -1.378GV
+    V(N00670)                 =    10.00GV  \  -811.53MV
+    V(N43702)                 =   -10.00GV  \    4.087GV
+    V(N00770)                 =    10.00GV  \  -811.26MV
+    V(N00740)                 =    10.00GV  \  -812.16MV
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00559)    2.8450 (N00670) 10.00E+09 (N00740) 10.00E+09 (N00770) 10.00E+09     
+
+(N03901) 10.00E+09 (N43694) 6.580E+06 (N43702)-10.00E+09 
+
+Resuming Simulation with the following settings
+ITL4 = 354
+RELTOL = 0.0086
+
+Convergence problem in transient analysis at Time =  640.1E-12
+         Time step =  291.7E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N03901)                 =    10.00GV  \   -1.378GV
+    V(N00670)                 =    10.00GV  \  -811.53MV
+    V(N43702)                 =   -10.00GV  \    4.087GV
+    V(N00770)                 =    10.00GV  \  -811.26MV
+    V(N00740)                 =    10.00GV  \  -812.16MV
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00559)    2.8450 (N00670) 10.00E+09 (N00740) 10.00E+09 (N00770) 10.00E+09     
+
+(N03901) 10.00E+09 (N43694) 6.580E+06 (N43702)-10.00E+09 
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+RELTOL = 0.05
+
+Convergence problem in transient analysis at Time =  640.1E-12
+         Time step =  291.7E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N03901)                 =    10.00GV  \   -1.378GV
+    V(N00670)                 =    10.00GV  \  -811.53MV
+    V(N43702)                 =   -10.00GV  \    4.087GV
+    V(N00770)                 =    10.00GV  \  -811.26MV
+    V(N00740)                 =    10.00GV  \  -812.16MV
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00559)    2.8450 (N00670) 10.00E+09 (N00740) 10.00E+09 (N00770) 10.00E+09     
+
+(N03901) 10.00E+09 (N43694) 6.580E+06 (N43702)-10.00E+09 
+
+Resuming could not converge the circuit, restarting it now
+
+  These voltages failed to converge:
+
+    V(N03901)                 =    10.00GV  \    10.00GV
+    V(N00670)                 =    10.00GV  \    10.00GV
+    V(N43702)                 =   -10.00GV  \   -10.00GV
+    V(N00770)                 =    10.00GV  \    10.00GV
+    V(N00740)                 =    10.00GV  \    10.00GV
+
+  These supply currents failed to converge:
+
+    I(L_Lg)                   =   -28.31MA  \   -28.31MA
+
+ERROR(ORPSIM-16550): Floating point computation failed during matrix solution. Possible solutions: 1)Ensure that all device parameters are in valid range. 2)Try using .options LIMIT
+
+INTERNAL ERROR -- Invalid Number, Divide
+
+ABORTING SIMULATION
+**** 06/13/22 21:43:45 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Mutual_Induc"  [ e:\shoot through\pspice\model\1\shoot-through-pspicefiles\schematic1\mutual_induc.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+Node counts:
+  Top level (NUNODS)                =           8
+  External (NCNODS)                 =           8
+  Total (NUMNOD)                    =           8
+
+Total device count (NUMEL)          =          20
+  Capacitors (C)                    =           3
+  Couplings (K)                     =           6
+  Inductors (L)                     =           4
+  Resistors (R)                     =           2
+  Voltage Sources (V)               =           1
+
+Number of subcircuits (X)           =           0
+
+Matrix statistics:
+  Matrix size (NSTOP)               =          13
+  Initial no. elements (NTTAR)      =          41
+  No. elements w/ fillin (NTTBR)    =          53
+  No. fillins (IFILL)               =          12
+  No. overflows (NTTOV)             =          27
+  No. LU operations (IOPS)          =          73
+  Percent sparsity (PERSPA)         =      68.639
+
+Analysis statistics:
+  No. total time points (NUMTTP)    =          77
+  No. rejected time points (NUMRTP) =          33
+  No. iterations (NUMNIT)           =        4957
+
+Load Threads                        =           2
+
+Runtime statistics:                       Seconds      Iterations
+  Matrix load                       =         .03
+  Matrix solution                   =        0.00               3
+  Readin                            =        0.00
+  General setup                     =        0.00
+  CMI setup                     =        0.00
+  Setup                             =        0.00
+  DC sweep                          =        0.00               0
+  Bias point                        =        0.00               5
+  AC and noise                      =        0.00               0
+  Total transient analysis          =        0.00
+  Output                            =        0.00
+  Overhead                          =         .05
+  License check-out time            =       18.26
+  Total job time (using Solver 1)   =        2.56
+

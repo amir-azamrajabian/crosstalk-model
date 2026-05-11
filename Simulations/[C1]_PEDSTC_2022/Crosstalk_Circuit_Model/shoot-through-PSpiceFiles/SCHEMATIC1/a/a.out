@@ -1,0 +1,96 @@
+
+**** 11/16/21 08:38:26 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-a"  [ e:\shoot through\pspice\model\1\shoot-through-pspicefiles\schematic1\a.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "a.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\ASUS\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1us 0 50p 
+.OPTIONS ADVCONV
+.PROBE64 V(*) I(*) W(*) D(*) NOISE(*) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SHOOT-THROUGH
+R_Rcirc         N00559 N00589  1  
+R_Rg         N03901 N00670  24  
+L_Lcirc         N00589 N00740  180n  
+L_Lg         0 N03901  3nH  
+L_Ls         N00770 0  13nH  
+C_Cgs         N00770 N00670  2.253n  
+C_Cgd         N00670 N00740  66.53p  
+C_Cds         N00770 N00740  103p  
+V_VDD         N00559 0  
++PULSE 0 600 0 92n 16n 100u 250u
+.PARAM  lval=60n
+
+**** RESUMING a.cir ****
+.END
+
+**** 11/16/21 08:38:26 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-a"  [ e:\shoot through\pspice\model\1\shoot-through-pspicefiles\schematic1\a.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00559)    0.0000 (N00589)    0.0000 (N00670)    0.0000 (N00740)    0.0000     
+
+(N00770)    0.0000 (N03901)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VDD        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 11/16/21 08:38:26 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-a"  [ e:\shoot through\pspice\model\1\shoot-through-pspicefiles\schematic1\a.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .56
+  Total job time (using Solver 1)   =         .28
+

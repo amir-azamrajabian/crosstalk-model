@@ -1,0 +1,311 @@
+
+**** 01/02/24 16:29:11 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\simulation.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Simulation.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 4.3us 4us 100p 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source VALIDATION
+V_Vbus         N00440 0 400Vdc
+R_Rcircuit         N00440 N00447  1 TC=0,0 
+R_RgHighside         N00560 N00451  {Rg} TC=0,0 
+L_Lcircuit         N00447 N00571  {Lcircuit}  
+L_Lghighside         N00451 N00459  {Lg}  
+L_LgLowside         N00455 N56313  {Lg}  
+L_LeHighside         N01013 N00592  {Le}  
+L_LeLowside         N50407 0  {Le}  
+R_RgLowside         0 N00455  {Rg} TC=0,0 
+V_VgHighside         N00560 N00592  
++PULSE 0 20 0 1ns 1ns 2us 4us
+L_Lload         N00592 0  {Lload}  
+R_Rparasitic         N04710 N04720  1 TC=0,0 
+R_Rg         0 N04912  {Rg} TC=0,0 
+L_Le         N04976 0  {Le}  
+L_Lg         N04912 N43438  {Lg}  
+L_Lparasitic         N04720 N04726  {Lcircuit}  
+V_VDC         N04710 0 400Vdc
+D_D5         N04976 N05851 Dbreak 
+L_LloadModel         N04726 0  {Lload}  
+D_D6         N10780 N10582 Dbreak 
+L_Lg1         N10760 N26026  {Lg}  
+L_Le1         N10780 0  {Le}  
+R_Rg1         0 N10760  {Rg} TC=0,0 
+R_Rparasitic1         N10500 N10510  1 TC=0,0 
+L_Lparasitic1         N10510 N10516  {Lcircuit}  
+L_LloadModel1         N10516 0  {Lload}  
+C_CCE1         N10780 N10582  183pF  TC=0,0 
+C_CGC1         N26026 N10582  27.8pF  TC=0,0 
+C_CGE1         N10780 N26026  3803pF  TC=0,0 
+V_V1         N10500 0 400Vdc
+Z_ZlowSideModel         N05851 N43438 N04976 IXGH60N60C2     
+L_LeHighside1         N04726 N05851  {Le}  
+L_LeHighside2         N10516 N10582  {Le}  
+Z_ZhighSide         N00571 N00459 N01013 IXGH60N60C2     
+Z_ZlowSide         N00592 N56313 N50407 IXGH60N60C2     
+D_D7         N01013 N00571 Dbreak 
+D_D8         N50407 N00592 Dbreak 
+.PARAM  lcircuit=50nh lg=3nh rg=20 lload=40uh rload=16 le=3nh
+
+**** RESUMING Simulation.cir ****
+.END
+
+**** 01/02/24 16:29:11 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\simulation.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 01/02/24 16:29:11 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\simulation.sim ] 
+
+
+ ****     IGBT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IXGH60N60C2     
+               NIGBT           
+          VT    4.1942       
+         MUN    5.500000E+03 
+         MUP  400            
+         BVF    6.234        
+          KF     .5005       
+         CGS   20.043000E-09 
+        COXD   20.906000E-09 
+         VTD   -5            
+         TAU   69.608000E-09 
+          KP   24.828        
+        AREA   37.500000E-06 
+         AGD   15.000000E-06 
+
+
+**** 01/02/24 16:29:11 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\simulation.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)    0.0000 (N00455)    0.0000     
+
+(N00459)    0.0000 (N00560)    0.0000 (N00571)  400.0000 (N00592) 216.8E-21     
+
+(N01013)    0.0000 (N04710)  400.0000 (N04720)    0.0000 (N04726) 107.9E-30     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407)    0.0000     
+
+(N56313)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside   0.000E+00
+    V_VDC       -4.000E+02
+    V_V1        -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  1.000E-12.
+         Time step =  321.1E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =   -4.216KV  \    19.72mV
+    V(N00451)                 =   -4.216KV  \    19.65mV
+    V(N00459)                 =   738.84pV  \    9.402mV
+    V(N00455)                 =   -74.09uV  \   -1.871uV
+    V(N56313)                 =   -4.216KV  \  -282.57uV
+    V(N01013)                 =         0V  \    9.402mV
+    V(N00592)                 =   -4.216KV  \  -282.60uV
+    V(N50407)                 =   -4.216KV  \  -282.57uV
+
+  These supply currents failed to converge:
+
+    I(L_Lghighside)           =  -194.92nA  \    3.416uA
+    I(L_LgLowside)            =    3.704uA  \    93.57nA
+    I(L_LeHighside)           =    87.11uA  \    83.50uA
+    I(L_LeLowside)            =   -3.705uA  \   -94.19nA
+    I(V_VgHighside)           =  -855.25uA  \   -3.416uA
+
+  These devices failed to converge:
+    D_D7      Z_ZlowSideModel Z_ZhighSide 
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-4216.3000 (N00455)-74.09E-06     
+
+(N00459) 738.8E-12 (N00560)-4216.3000 (N00571)  400.0000 (N00592)-4216.3000     
+
+(N01013)    0.0000 (N04710)  400.0000 (N04720)-56.84E-15 (N04726) 2.004E-12     
+
+(N04912)-36.70E-21 (N04976) 82.04E-15 (N05851) 33.04E-15 (N10500)  400.0000     
+
+(N10510)-56.84E-15 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438) 35.08E-15 (N50407)-4216.3000     
+
+(N56313)-4216.3000 
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.001
+**** Param: ABSTOL = 1e-12
+**** Param: VNTOL = 1e-06
+**** Param: GMIN = 1e-12
+**** Param: TSTOP = 4.3e-06
+**** Param: TMAX = 1e-10
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 10
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-10
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+
+ERROR(ORPSIM-16550): Floating point computation failed during matrix solution. Possible solutions: 1)Ensure that all device parameters are in valid range. 2)Try using .options LIMIT
+
+INTERNAL ERROR -- Overflow, Multiply
+
+ABORTING SIMULATION
+**** 01/02/24 16:29:11 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\validation\validation-pspicefiles\schematic1\simulation.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+Node counts:
+  Top level (NUNODS)                =          26
+  External (NCNODS)                 =          26
+  Total (NUMNOD)                    =          36
+
+Total device count (NUMEL)          =          53
+  Capacitors (C)                    =           3
+  Diodes (D)                        =           4
+  Inductors (L)                     =          16
+  Resistors (R)                     =           7
+  Voltage Sources (V)               =           4
+  IGBTs (Z)                         =           3
+
+Number of subcircuits (X)           =           0
+
+Matrix statistics:
+  Matrix size (NSTOP)               =          56
+  Initial no. elements (NTTAR)      =         191
+  No. elements w/ fillin (NTTBR)    =         228
+  No. fillins (IFILL)               =          37
+  No. overflows (NTTOV)             =         128
+  No. LU operations (IOPS)          =         324
+  Percent sparsity (PERSPA)         =      92.730
+
+Analysis statistics:
+  No. total time points (NUMTTP)    =          13
+  No. rejected time points (NUMRTP) =          12
+  No. iterations (NUMNIT)           =          99
+
+Load Threads                        =           5
+
+Runtime statistics:                       Seconds      Iterations
+  Matrix load                       =         .02
+  Matrix solution                   =         .02               3
+  Readin                            =        0.00
+  General setup                     =         .06
+  CMI setup                     =        0.00
+  Setup                             =        0.00
+  DC sweep                          =        0.00               0
+  Bias point                        =         .02              13
+  AC and noise                      =        0.00               0
+  Total transient analysis          =        0.00
+  Output                            =        0.00
+  Overhead                          =         .03
+  Total job time (using Solver 1)   =        6.14
+

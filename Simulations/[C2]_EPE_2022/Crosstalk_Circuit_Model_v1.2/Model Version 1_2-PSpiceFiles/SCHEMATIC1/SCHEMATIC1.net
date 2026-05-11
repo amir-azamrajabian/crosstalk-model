@@ -1,0 +1,18 @@
+* source MODEL VERSION 1_2
+Z_Z1         N00697 N00704 N00719 IXGH60N60C2     
+Z_Z2         N00723 N00768 N00764 IXGH60N60C2     
+R_R1         N00686 N00693  1 TC=0,0 
+R_R2         N00712 N00708  {RGate} TC=0,0 
+R_R3         0 N00772  3 TC=0,0 
+L_L1         N00693 N00697  {LCircuit}  
+L_L2         N00708 N00704  3nH  
+L_L3         N00719 N00723  3nH  
+L_L4         N00764 0  {Le}  
+L_L5         N00772 N00768  3nH  
+L_L6         N00723 0  40uH  
+V_VgHighside         N00712 N00723  
++PULSE 0 20 0 1ns 1ns 2us 4us
+V_V1         N00686 0 400Vdc
+D_D1         N00719 N00697 Dbreak 
+D_D2         N00764 N00723 Dbreak 
+.PARAM  lcircuit=100nh rgate=20 le=3nh

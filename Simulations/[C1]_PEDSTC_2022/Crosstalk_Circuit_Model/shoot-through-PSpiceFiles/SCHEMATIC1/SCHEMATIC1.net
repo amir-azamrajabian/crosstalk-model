@@ -1,0 +1,13 @@
+* source SHOOT-THROUGH
+R_Rcirc         N00559 N43694  1  
+R_Rg         N03901 N00670  20  
+L_Lcirc         N43694 N43702  50nH  
+C_Cgs         N00770 N00670  3047p  
+C_Cgd         N00670 N00740  58.125p  
+C_Cds         N00770 N00740  107p  
+V_VDD         N00559 0  
++PULSE 0 400 0 83n 16n 100u 250u
+L_Ld         N43702 N00740  10.9nH  
+L_Lg         0 N03901  3nH  
+L_Ls         N00770 0  10nH  
+.PARAM  rise=127n lval=50n

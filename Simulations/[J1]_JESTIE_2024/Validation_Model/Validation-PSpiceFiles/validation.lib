@@ -1,0 +1,47 @@
+* PSpice Model Editor - Version 22.1.0
+*$
+.model IRFP460	NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++		Tox=100n Uo=600 Phi=.6 Rs=2.041m Kp=20.65u W=1.9 L=2u Vto=3.248
++		Rd=.2303 Rds=2.222MEG Cbd=5.156n Pb=.8 Mj=.5 Fc=.5 Cgso=1.947n
++		Cgdo=135.8p Rg=1.556 Is=96.3p N=1 Tt=670n)
+*		Int'l Rectifier	pid=IRFC460	case=TO3P
+*		88-08-26 bam	creation
+*$
+*DEVICE=IXGH60N60B2,NIGBT
+* IXGH60N60B2 NIGBT model
+* updated using Model Editor release 9.2.1 on 04/10/04 at 15:08
+* The Model Editor is a PSpice product hem.
+.MODEL IXGH60N60B2 NIGBT
++ TAU=69.608E-9
++ KP=24.828
++ AREA=37.500E-6
++ AGD=15.000E-6
++ VT=100
++ MUN=5.5000E3
++ MUP=400
++ BVF=6.2340
++ KF=.5005
++ CGS=3803E-12
++ COXD=1.6659E-09
++ VTD=-5
+* PSpice Model Editor - Version 9.2.1
+*$
+*DEVICE=IXGH60N60C2,NIGBT
+* IXGH60N60C2 NIGBT model
+* updated using Model Editor release 9.2.1 on 03/10/04 at 15:08
+* The Model Editor is a PSpice product hem.
+.MODEL IXGH60N60C2 NIGBT
++ TAU=69.608E-9
++ KP=24.828
++ AREA=37.500E-6
++ AGD=15.000E-6
++ VT=10
++ MUN=5.5000E3
++ MUP=400
++ BVF=6.2340
++ KF=.5005
++ CGS=3793E-12
++ COXD=1.6659E-09
++ VTD=-5
+* PSpice Model Editor - Version 9.2.1
+*$

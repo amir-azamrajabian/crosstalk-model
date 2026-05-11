@@ -1,0 +1,83 @@
+# =============================================================================
+# .gitignore - Crosstalk Research Repository (Private)
+# Amir Azam Rajabian | am.azrajabian@gmail.com
+#
+# Rule: track all research files. Exclude only auto-generated outputs
+# that are too large for GitHub (>100 MB) or have no archival value.
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# MATLAB figures - auto-generated, can exceed 200 MB (Trace_Inductance.fig = 229 MB)
+# Regenerate by running the corresponding .m script in MATLAB
+# ---------------------------------------------------------------------------
+*.fig
+
+# ---------------------------------------------------------------------------
+# PSpice binary waveform data - auto-generated on every simulation run
+# Can reach 100 MB+ (Resonance.dat = 99 MB, 3DPlot.dat = 96 MB)
+# Regenerate by re-running the simulation in OrCAD PSpice
+# ---------------------------------------------------------------------------
+*.dat
+
+# ---------------------------------------------------------------------------
+# OrCAD / PSpice - auto-backup and lock files only
+# Project files (.opj .DSN .cir .sim .net .out .prb .als .prp) ARE tracked
+# ---------------------------------------------------------------------------
+*.DBK
+*.dbk
+*.bak
+*.lck
+*.tmp
+*.mif
+*.mrk
+*.1OP
+*.1op
+*.chi
+*.lis
+*.ind
+*.stl
+
+# ---------------------------------------------------------------------------
+# GPUCache - OrCAD 17.4+ embedded browser cache, no research value
+# ---------------------------------------------------------------------------
+GPUCache/
+data_0
+data_1
+data_2
+data_3
+
+# ---------------------------------------------------------------------------
+# MATLAB auto-generated files
+# (.m source, .mat workspace, .csv exports ARE tracked)
+# ---------------------------------------------------------------------------
+*.asv
+*.mex*
+*.mexa64
+*.mexw64
+*.mexmaci64
+slprj/
+*.slx.autosave
+*.slxc
+*.sfit
+
+# ---------------------------------------------------------------------------
+# OS and editor noise
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.code-workspace
+
+# ---------------------------------------------------------------------------
+# Python cache
+# ---------------------------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/

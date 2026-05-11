@@ -1,0 +1,21 @@
+** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+** Creating circuit file "3DPlot.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../validation-pspicefiles/validation.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 4.2u 4u 100p 
+.STEP LIN PARAM Le 10n 50n 1n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

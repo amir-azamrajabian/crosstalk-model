@@ -1,0 +1,372 @@
+
+**** 01/20/24 11:53:52 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-New_Validation"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\New_Validation.s
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "New_Validation.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../validation-pspicefiles/validation.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 4.3u 4u 100p 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source VALIDATION
+V_Vbus         N00440 0 {VBus}
+R_Rcircuit         N00440 N00447  1 TC=0,0 
+R_RgHighside         N00560 N00451  {Rg} TC=0,0 
+L_Lcircuit         N00447 N00571  {Lcircuit}  
+L_Lghighside         N00451 N00459  {Lg}  
+L_LgLowside         N00455 N56313  {Lg}  
+R_RgLowside         0 N00455  40 TC=0,0 
+V_VgHighside         N00560 N00592  
++PULSE 0 20 0 1ns 1ns 2us 4us
+L_Lload         N00592 0  {Lload}  
+R_Rparasitic         N04710 N04720  1 TC=0,0 
+R_Rg         0 N04912  {Rg} TC=0,0 
+L_Le         N04976 0  {Le}  
+L_Lg         N04912 N43438  {Lg}  
+L_Lparasitic         N04720 N04726  {Lcircuit}  
+V_VDC         N04710 0 {VBus}
+D_D5         N04976 N05851 Dbreak 
+L_LloadModel         N04726 0  {Lload}  
+D_D6         N10780 N10582 Dbreak 
+L_Lg1         N10760 N26026  {Lg}  
+L_Lelowside2         N10780 0  {Le}  
+R_Rg1         0 N10760  {Rg} TC=0,0 
+R_Rparasitic1         N10500 N10510  1 TC=0,0 
+L_Lparasitic1         N10510 N10516  {Lcircuit}  
+L_LloadModel1         N10516 0  {Lload}  
+C_CCE1         N10780 N10582  183pF  TC=0,0 
+C_CGC1         N26026 N10582  44.129pF  TC=0,0 
+C_CGE1         N10780 N26026  3803pF  TC=0,0 
+V_V1         N10500 0 {VBus}
+Z_ZlowSideModel         N05851 N43438 N04976 IXGH60N60C2     
+L_LeHighside1         N04726 N05851  {Le}  
+L_LeHighside2         N10516 N10582  {Le}  
+D_D7         N01013 N00571 Dbreak 
+D_D8         N50407 N00592 Dbreak 
+L_LeHighside         N01013 N00592  {Le}  
+L_LeLowside         N50407 0  {Le}  
+Z_Z3         N00571 N00459 N01013 IXGH60N60C2     
+Z_Z4         N00592 N56313 N50407 IXGH60N60C2     
+.PARAM  lcircuit=100nh lg=3nh rg=20 vbus=500vdc lload=40uh rload=16 le=4nh
+
+**** RESUMING New_Validation.cir ****
+.END
+
+**** 01/20/24 11:53:52 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-New_Validation"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\New_Validation.s
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 01/20/24 11:53:52 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-New_Validation"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\New_Validation.s
+
+
+ ****     IGBT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IXGH60N60C2     
+               NIGBT           
+          VT    4.1942       
+         MUN    5.500000E+03 
+         MUP  400            
+         BVF    6.234        
+          KF     .5005       
+         CGS    3.803000E-09 
+        COXD  146.390000E-12 
+         VTD   -5            
+         TAU   69.608000E-09 
+          KP   24.828        
+        AREA   37.500000E-06 
+         AGD   15.000000E-06 
+
+
+**** 01/20/24 11:53:52 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-New_Validation"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\New_Validation.s
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  500.0000 (N00447)  500.0000 (N00451)    0.0000 (N00455)    0.0000     
+
+(N00459)    0.0000 (N00560)    0.0000 (N00571)  500.0000 (N00592)    0.0000     
+
+(N01013)    0.0000 (N04710)  500.0000 (N04720)    0.0000 (N04726) 107.9E-30     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  500.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407)    0.0000     
+
+(N56313)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -9.504E-05
+    V_VgHighside   0.000E+00
+    V_VDC       -5.000E+02
+    V_V1        -5.000E+02
+
+    TOTAL POWER DISSIPATION   5.00E+05  WATTS
+
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  1.000E-12.
+         Time step =  321.1E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =    -4.252V  \    19.81mV
+    V(N00451)                 =    -4.252V  \    19.75mV
+    V(N00571)                 =     76.72V  \    500.01V
+    V(N00459)                 =   -423.28V  \    11.02mV
+    V(N56313)                 =    -4.272V  \  -190.20uV
+    V(N00592)                 =    -4.272V  \  -190.21uV
+    V(N01013)                 =   -423.28V  \    11.02mV
+    V(N50407)                 =    -4.272V  \  -190.20uV
+
+  These supply currents failed to converge:
+
+    I(L_Lghighside)           =    3.271uA  \    2.912uA
+    I(L_LgLowside)            =    66.22nA  \    62.57nA
+    I(L_LeHighside)           =    97.58uA  \    97.85uA
+    I(L_LeLowside)            =   -50.29nA  \   -47.55nA
+    I(V_VgHighside)           =   -3.271uA  \   -2.912uA
+
+  These devices failed to converge:
+    D_D5      D_D7      Z_ZlowSideModel Z_Z3      
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  500.0000 (N00447)  500.0000 (N00451)   -4.2522 (N00455)-2.649E-06     
+
+(N00459) -423.2800 (N00560)   -4.2522 (N00571)   76.7160 (N00592)   -4.2722     
+
+(N01013) -423.2800 (N04710)  500.0000 (N04720)-56.84E-15 (N04726) 1.045E-12     
+
+(N04912)-12.45E-21 (N04976)-148.4E-15 (N05851) 135.2E-15 (N10500)  500.0000     
+
+(N10510)-56.84E-15 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)-131.8E-15 (N50407)   -4.2722     
+
+(N56313)   -4.2722 
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.001
+**** Param: ABSTOL = 1e-12
+**** Param: VNTOL = 1e-06
+**** Param: GMIN = 1e-12
+**** Param: TSTOP = 4.3e-06
+**** Param: TMAX = 1e-10
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 10
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-10
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+Convergence problem in transient analysis at Time =  1.639E-06
+         Time step =  372.5E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =   -2.105KV  \    266.28V
+    V(N00451)                 =   -2.105KV  \    266.28V
+    V(N00571)                 =   477.47mV  \     17.70V
+    V(N00459)                 =     18.56V  \     35.78V
+    V(N00455)                 =   -6.055mV  \   -7.125mV
+    V(N56313)                 =   -2.602KV  \   -230.80V
+    V(N00592)                 =   -2.125KV  \    246.28V
+    V(N04726)                 =    71.42uV  \  -821.20nV
+    V(N10516)                 =   -13.40uV  \   -1.756uV
+    V(N01013)                 =    -1.392V  \     15.83V
+    V(N50407)                 =   -2.602KV  \   -230.79V
+
+  These supply currents failed to converge:
+
+    I(L_Lghighside)           =   -2.778uA  \    28.64uA
+    I(L_LgLowside)            =   151.37uA  \   178.14uA
+    I(L_LeLowside)            =  -462.71uA  \  -482.78uA
+    I(V_VgHighside)           =    2.778uA  \   -28.64uA
+
+  These devices failed to converge:
+    D_D5      D_D6      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  500.0000 (N00447)  480.1800 (N00451)-2105.1000 (N00455)    -.0061     
+
+(N00459)   18.5600 (N00560)-2105.1000 (N00571)     .4775 (N00592)-2125.1000     
+
+(N01013)   -1.3920 (N04710)  500.0000 (N04720) 3.638E-12 (N04726) 71.42E-06     
+
+(N04912) 80.08E-15 (N04976)-449.9E-09 (N05851)-449.9E-09 (N10500)  500.0000     
+
+(N10510) 341.1E-15 (N10516)-13.40E-06 (N10582)-47.53E-09 (N10760) 287.6E-15     
+
+(N10780)-47.51E-09 (N26026)-47.51E-09 (N43438)-449.9E-09 (N50407)-2602.2000     
+
+(N56313)-2602.2000 
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+ABSTOL = 1.41e-09
+VNTOL = 4.47e-05
+
+Convergence problem in transient analysis at Time =  1.639E-06
+         Time step =  372.5E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =    796.04V  \    254.81V
+    V(N00451)                 =    796.04V  \    254.81V
+    V(N00571)                 =     1.671V  \    -6.100V
+    V(N00459)                 =     19.75V  \     11.98V
+    V(N56313)                 =    298.96V  \   -242.27V
+    V(N00592)                 =    776.04V  \    234.81V
+    V(N04726)                 =   151.12uV  \   791.18nV
+    V(N10516)                 =   150.25uV  \   657.22nV
+    V(N01013)                 =  -198.58mV  \    -7.969V
+    V(N50407)                 =    298.97V  \   -242.26V
+
+  These supply currents failed to converge:
+
+    I(L_Lghighside)           =    30.98uA  \    30.21uA
+    I(L_LgLowside)            =   179.30uA  \   179.59uA
+    I(V_VgHighside)           =   -30.98uA  \   -30.21uA
+
+  These devices failed to converge:
+    Z_Z3      Z_Z4      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  500.0000 (N00447)  480.1800 (N00451)  796.0300 (N00455)    -.0072     
+
+(N00459)   19.7540 (N00560)  796.0400 (N00571)    1.6708 (N00592)  776.0400     
+
+(N01013)    -.1986 (N04710)  500.0000 (N04720) 3.638E-12 (N04726) 151.1E-06     
+
+(N04912) 707.6E-15 (N04976) 535.0E-09 (N05851) 535.0E-09 (N10500)  500.0000     
+
+(N10510) 284.2E-15 (N10516) 150.2E-06 (N10582) 312.7E-09 (N10760) 793.3E-15     
+
+(N10780) 312.7E-09 (N26026) 312.7E-09 (N43438) 535.0E-09 (N50407)  298.9700     
+
+(N56313)  298.9600 
+
+Resuming Simulation with the following settings
+ITL4 = 125
+ABSTOL = 2e-06
+VNTOL = 0.001
+
+
+          JOB ABORTED
+
+**** 01/20/24 11:53:52 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-New_Validation"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\New_Validation.s
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =      110.44
+  Total job time (using Solver 1)   =      167.70
+

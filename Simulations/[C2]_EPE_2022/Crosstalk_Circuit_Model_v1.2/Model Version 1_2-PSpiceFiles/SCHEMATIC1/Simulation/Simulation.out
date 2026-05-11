@@ -1,0 +1,234 @@
+
+**** 12/12/23 10:09:44 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\model version 1.2\model version 1_2-pspicefiles\schematic1\simula
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Simulation.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 6us 0us 100p 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MODEL VERSION 1_2
+Z_Z1         N00697 N00704 N00719 IXGH60N60C2     
+Z_Z2         N00723 N00768 N00764 IXGH60N60C2     
+R_R1         N00686 N00693  1 TC=0,0 
+R_R2         N00712 N00708  {RGate} TC=0,0 
+R_R3         0 N00772  3 TC=0,0 
+L_L1         N00693 N00697  {LCircuit}  
+L_L2         N00708 N00704  3nH  
+L_L3         N00719 N00723  3nH  
+L_L4         N00764 0  {Le}  
+L_L5         N00772 N00768  3nH  
+L_L6         N00723 0  40uH  
+V_VgHighside         N00712 N00723  
++PULSE 0 20 0 1ns 1ns 2us 4us
+V_V1         N00686 0 400Vdc
+D_D1         N00719 N00697 Dbreak 
+D_D2         N00764 N00723 Dbreak 
+.PARAM  lcircuit=100nh rgate=20 le=3nh
+
+**** RESUMING Simulation.cir ****
+.END
+
+**** 12/12/23 10:09:44 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\model version 1.2\model version 1_2-pspicefiles\schematic1\simula
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 12/12/23 10:09:44 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\model version 1.2\model version 1_2-pspicefiles\schematic1\simula
+
+
+ ****     IGBT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IXGH60N60C2     
+               NIGBT           
+          VT    4.1942       
+         MUN    5.500000E+03 
+         MUP  400            
+         BVF    6.234        
+          KF     .5005       
+         CGS   20.043000E-09 
+        COXD   20.906000E-09 
+         VTD   -5            
+         TAU   69.608000E-09 
+          KP   24.828        
+        AREA   37.500000E-06 
+         AGD   15.000000E-06 
+
+
+**** 12/12/23 10:09:44 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\model version 1.2\model version 1_2-pspicefiles\schematic1\simula
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00686)  400.0000 (N00693)  400.0000 (N00697)  400.0000 (N00704) 271.1E-21     
+
+(N00708) 271.1E-21 (N00712) 271.1E-21 (N00719) 2.454E-24 (N00723) 271.1E-21     
+
+(N00764)    0.0000 (N00768)    0.0000 (N00772)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VgHighside   3.776E-26
+    V_V1        -8.027E-05
+
+    TOTAL POWER DISSIPATION   3.21E-02  WATTS
+
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  1.000E-12.
+         Time step =  321.1E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N00697)                 =    11.55KV  \    400.01V
+    V(N00704)                 =    11.15KV  \     9.68mV
+    V(N00719)                 =    11.15KV  \     9.68mV
+    V(N00723)                 =     49.91V  \  -145.15uV
+    V(N00768)                 =     49.91V  \  -145.14uV
+    V(N00764)                 =     49.91V  \  -145.14uV
+    V(N00712)                 =     49.93V  \    19.86mV
+    V(N00708)                 =     49.93V  \    19.79mV
+
+  These supply currents failed to converge:
+
+    I(L_L1)                   =    79.89uA  \    80.17uA
+    I(L_L2)                   =   -6.134uA  \    3.371uA
+    I(L_L3)                   =    93.05uA  \    83.54uA
+    I(L_L4)                   =   -5.636nA  \   -48.38nA
+    I(L_L5)                   =    5.587nA  \    48.33nA
+    I(V_VgHighside)           =    6.134uA  \   -3.371uA
+    I(V_V1)                   =   -79.89uA  \   -80.17uA
+
+  These devices failed to converge:
+    D_D1      Z_Z1      
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00686)  400.0000 (N00693)  400.0000 (N00697) 11.55E+03 (N00704) 11.15E+03     
+
+(N00708)   49.9310 (N00712)   49.9310 (N00719) 11.15E+03 (N00723)   49.9110     
+
+(N00764)   49.9110 (N00768)   49.9110 (N00772)-16.76E-09 
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.001
+**** Param: ABSTOL = 1e-12
+**** Param: VNTOL = 1e-06
+**** Param: GMIN = 1e-12
+**** Param: TSTOP = 6e-06
+**** Param: TMAX = 1e-10
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 10
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-10
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+
+
+          JOB CONCLUDED
+ AutoConverge Simulator Options
+ ITL1 = 150
+ ITL2 = 20
+ ITL4 = 100
+ RELTOL = 0.001
+ ABSTOL = 1e-12
+ VNTOL = 1e-06
+ PIVTOL = 1e-13
+
+**** 12/12/23 10:09:44 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulation"  [ e:\power electronics\pspice\model version 1.2\model version 1_2-pspicefiles\schematic1\simula
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       12.63
+  Total job time (using Solver 1)   =       13.17
+

@@ -1,0 +1,3516 @@
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "3DPlot.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../validation-pspicefiles/validation.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 4.2u 4u 100p 
+.STEP LIN PARAM Le 10n 50n 1n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source VALIDATION
+V_Vbus         N00440 0 {VBus}
+R_Rcircuit         N00440 N00447  1 TC=0,0 
+R_RgHighside         N00560 N00451  {Rg} TC=0,0 
+L_Lcircuit         N00447 N00571  {Lcircuit}  
+L_Lghighside         N00451 N00459  {Lg}  
+L_LgLowside         N00455 N56313  {Lg}  
+R_RgLowside         0 N00455  {Rg} TC=0,0 
+V_VgHighside         N00560 N00592  
++PULSE 0 20 0 1ns 1ns 2us 4us
+L_Lload         N00592 0  {Lload}  
+R_Rparasitic         N04710 N04720  1 TC=0,0 
+R_Rg         0 N04912  {Rg} TC=0,0 
+L_LeLowside1         N04976 0  {Le}  
+L_Lg         N04912 N43438  {Lg}  
+L_Lparasitic         N04720 N04726  {Lcircuit}  
+V_VDC         N04710 0 {VBus}
+D_D5         N04976 N05851 Dbreak 
+L_LloadModel         N04726 0  {Lload}  
+D_D6         N10780 N10582 Dbreak 
+L_Lg1         N10760 N26026  {Lg}  
+L_Lelowside2         N10780 0  {Le}  
+R_Rg1         0 N10760  {Rg} TC=0,0 
+R_Rparasitic1         N10500 N10510  1 TC=0,0 
+L_Lparasitic1         N10510 N10516  {Lcircuit}  
+L_LloadModel1         N10516 0  {Lload}  
+C_CCE1         N10780 N10582  183pF  TC=0,0 
+C_CGC1         N26026 N10582  71.76pF  TC=0,0 
+C_CGE1         N10780 N26026  3793pF  TC=0,0 
+L_LeHighside1         N04726 N05851  {Le}  
+L_LeHighside2         N10516 N10582  {Le}  
+D_D7         N01013 N00571 Dbreak 
+D_D8         N50407 N00592 Dbreak 
+L_LeHighside         N01013 N00592  3nH  
+L_LeLowside         N50407 0  {Le}  
+Z_Z1         N00571 N00459 N01013 IXGH60N60C2     
+Z_Z7         N05851 N43438 N04976 IXGH60N60B2     
+L_Lcircuit1         N106072 N110519  {Lcircuit}  
+L_LeHighside3         N110530 N106294  {Le}  
+V_VgHighside1         N106186 N106294  
++PULSE 0 20 0 1ns 1ns 2us 4us
+R_RgLowside1         0 N106444  {Rg} TC=0,0 
+L_LgLowside1         N106444 N106450  {Lg}  
+R_RgHighside1         N106186 N106196  {Rg} TC=0,0 
+R_Rcircuit1         N106062 N106072  1 TC=0,0 
+V_Vbus1         N106062 0 {VBus}
+L_Lghighside1         N106196 N110526  {Lg}  
+L_LeLowside3         N110371 0  {Le}  
+L_Lload1         N106294 0  {Lload}  
+M_M5         N110519 N110526 N110530 N110530 IRFP460
+M_M6         N106294 N106450 N110371 N110371 IRFP460
+D_D9         N110530 N110519 Dbreak 
+D_D10         N110371 N106294 Dbreak 
+Z_Z8         N00592 N56313 N50407 IXGH60N60C2     
+V_Vbus2         N10500 0 {VBus}
+.PARAM  lcircuit=60nh lg=3nh rg=10 rload=16 lload=40uh vbus=400vdc le=3nh
+
+**** RESUMING 3DPlot.cir ****
+.END
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRFP460         
+               NMOS            
+       LEVEL    3            
+           L    2.000000E-06 
+           W    1.9          
+         VTO    3.248        
+          KP   20.650000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          RD     .2303       
+          RS    2.041000E-03 
+          RG    1.556        
+         RDS    2.222000E+06 
+          IS   96.300000E-12 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD    5.156000E-09 
+          CJ    0            
+        CJSW    0            
+          TT  670.000000E-09 
+        CGSO    1.947000E-09 
+        CGDO  135.800000E-12 
+        CGBO    0            
+         TOX  100.000000E-09 
+          XJ    0            
+       UCRIT   10.000000E+03 
+       DELTA    0            
+         ETA    0            
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     IGBT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IXGH60N60C2     IXGH60N60B2     
+               NIGBT           NIGBT           
+          VT   10             100            
+         MUN    5.500000E+03    5.500000E+03 
+         MUP  400             400            
+         BVF    6.234           6.234        
+          KF     .5005           .5005       
+         CGS    3.793000E-09    3.803000E-09 
+        COXD    1.665900E-09    1.665900E-09 
+         VTD   -5              -5            
+         TAU   69.608000E-09   69.608000E-09 
+          KP   24.828          24.828        
+        AREA   37.500000E-06   37.500000E-06 
+         AGD   15.000000E-06   15.000000E-06 
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   10.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)    0.0000 (N00455)    0.0000     
+
+(N00459)    0.0000 (N00560)    0.0000 (N00571)  400.0000 (N00592)    0.0000     
+
+(N01013)    0.0000 (N04710)  400.0000 (N04720)    0.0000 (N04726) 213.0E-30     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407)    0.0000     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside   0.000E+00
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  1.000E-12.
+         Time step =  320.7E-21, minimum allowable step size =  1.000E-18
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)     .0196 (N00455)-1.200E-06     
+
+(N00459)     .0094 (N00560)     .0196 (N00571)  400.0100 (N00592)-361.3E-06     
+
+(N01013)     .0094 (N04710)  400.0000 (N04720)    0.0000 (N04726) 133.2E-18     
+
+(N04912)-26.78E-21 (N04976) 4.558E-18 (N05851) 155.4E-18 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)-8.062E-18 (N50407)-361.3E-06     
+
+(N56313)-361.3E-06 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186)     .0195                   (N106196)     .0194                       
+
+(N106294)-550.4E-06                   (N106444)-1.828E-06                       
+
+(N106450)-550.1E-06                   (N110371)-550.4E-06                       
+
+(N110519)  400.0100                   (N110526)     .0143                       
+
+(N110530)     .0143                   
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.001
+**** Param: ABSTOL = 1e-12
+**** Param: VNTOL = 1e-06
+**** Param: GMIN = 1e-12
+**** Param: TSTOP = 4.2e-06
+**** Param: TMAX = 1e-10
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 10
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-10
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+
+WARNING(ORPSIM-16534): Using high values of ITL4 for Speed Level > 0 may increase total simulation job time.
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   11.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)    0.0000 (N00455)    0.0000     
+
+(N00459)    0.0000 (N00560)    0.0000 (N00571)  400.0000 (N00592)    0.0000     
+
+(N01013)    0.0000 (N04710)  400.0000 (N04720)    0.0000 (N04726) 213.0E-30     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407)    0.0000     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside   0.000E+00
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+Convergence problem in transient analysis at Time =  1.000E-12
+         Time step =  2.565E-18, minimum allowable step size =  4.200E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =   -201.40V  \    19.63mV
+    V(N00451)                 =   -201.40V  \    19.60mV
+    V(N00571)                 =    142.27V  \    400.01V
+    V(N00459)                 =   -257.73V  \    9.380mV
+    V(N00455)                 =   -15.00uV  \   -1.226uV
+    V(N56313)                 =   -201.42V  \  -368.91uV
+    V(N00592)                 =   -201.42V  \  -368.93uV
+    V(N04976)                 =   -3.223uV  \ 4.725e-18V
+    V(N43438)                 =   -3.223uV  \ -7.895e-18V
+    V(N04726)                 =    23.02uV  \ 131.42e-18V
+    V(N05851)                 =   -3.223uV  \ 155.54e-18V
+    V(N10780)                 =    4.188uV  \         0V
+    V(N10582)                 =    4.188uV  \         0V
+    V(N26026)                 =    4.188uV  \         0V
+    V(N10516)                 =    29.28uV  \         0V
+    V(N01013)                 =   -257.73V  \    9.380mV
+    V(N50407)                 =   -201.42V  \  -368.91uV
+    V(N110519)                =    507.01V  \    400.01V
+    V(N110530)                =    107.01V  \    14.55mV
+    V(N106294)                =    -74.04V  \  -573.50uV
+    V(N106186)                =    -74.02V  \    19.43mV
+    V(N106444)                =   -6.968uV  \   -1.904uV
+    V(N106450)                =    -74.04V  \  -573.15uV
+    V(N106196)                =    -74.02V  \    19.41mV
+    V(N110526)                =    107.01V  \    14.56mV
+    V(N110371)                =    -74.04V  \  -573.45uV
+
+  These supply currents failed to converge:
+
+    I(L_Lcircuit)             =    80.20uA  \    80.11uA
+    I(L_Lghighside)           =    3.791uA  \    3.406uA
+    I(L_LgLowside)            =    1.500uA  \   122.56nA
+    I(L_LeHighside)           =    83.13uA  \    83.52uA
+    I(L_LeLowside)            =  -409.26nA  \   -33.54nA
+    I(L_LeHighside3)          =   181.73uA  \   181.39uA
+    I(L_LgLowside1)           =   696.81nA  \   190.42nA
+    I(L_Lghighside1)          =   379.64nA  \    1.618uA
+    I(L_LeLowside3)           =  -190.24nA  \   -52.13nA
+    I(V_Vbus)                 =   -80.20uA  \   -80.11uA
+    I(V_VgHighside)           =   -3.791uA  \   -3.406uA
+    I(V_VgHighside1)          =  -379.64nA  \   -1.618uA
+
+  These devices failed to converge:
+    M_M5      M_M6      Z_Z1      Z_Z7      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451) -201.4000 (N00455)-15.00E-06     
+
+(N00459) -257.7300 (N00560) -201.4000 (N00571)  142.2700 (N00592) -201.4200     
+
+(N01013) -257.7300 (N04710)  400.0000 (N04720)    0.0000 (N04726) 23.02E-06     
+
+(N04912)-220.4E-15 (N04976)-3.223E-06 (N05851)-3.223E-06 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516) 29.28E-06 (N10582) 4.188E-06 (N10760) 286.4E-15     
+
+(N10780) 4.188E-06 (N26026) 4.188E-06 (N43438)-3.223E-06 (N50407) -201.4200     
+
+(N56313) -201.4200 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186)  -74.0170                   (N106196)  -74.0170                       
+
+(N106294)  -74.0370                   (N106444)-6.968E-06                       
+
+(N106450)  -74.0370                   (N110371)  -74.0370                       
+
+(N110519)  507.0100                   (N110526)  107.0100                       
+
+(N110530)  107.0100                   
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+ABSTOL = 1.41e-09
+VNTOL = 4.47e-05
+
+Convergence problem in transient analysis at Time =  2.001E-06
+         Time step =  3.835E-18, minimum allowable step size =  4.200E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =     3.392V  \    170.18V
+    V(N00451)                 =     3.392V  \    170.18V
+    V(N00571)                 =     1.791V  \     1.152V
+    V(N00459)                 =     19.87V  \     19.23V
+    V(N56313)                 =   -394.86V  \   -228.07V
+    V(N00592)                 =    -16.61V  \    150.18V
+    V(N01013)                 =  -101.02mV  \  -740.16mV
+    V(N50407)                 =   -394.86V  \   -228.07V
+    V(N110519)                =   -186.42V  \    741.26V
+    V(N110530)                =   -190.81V  \    736.87V
+    V(N106294)                =   -588.01V  \    551.36V
+    V(N106186)                =   -568.01V  \    571.36V
+    V(N106444)                =   -29.94mV  \   -29.86mV
+    V(N106450)                =   -964.33V  \    175.04V
+    V(N106196)                =   -568.01V  \    571.36V
+    V(N110526)                =   -170.91V  \    756.77V
+    V(N110371)                =   -964.30V  \    175.07V
+
+  These supply currents failed to converge:
+
+    I(L_Lghighside)           =    6.848uA  \    6.708uA
+    I(L_LgLowside)            =   309.97uA  \   306.24uA
+    I(L_LeLowside)            =  -394.15uA  \  -393.14uA
+    I(L_LgLowside1)           =    2.994mA  \    2.986mA
+    I(L_Lghighside1)          =  -131.38uA  \  -127.70uA
+    I(V_VgHighside)           =   -6.848uA  \   -6.708uA
+    I(V_VgHighside1)          =   131.38uA  \   127.70uA
+
+  These devices failed to converge:
+    Z_Z1      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451)    3.3920 (N00455)    -.0031     
+
+(N00459)   19.8710 (N00560)    3.3921 (N00571)    1.7909 (N00592)  -16.6080     
+
+(N01013)    -.1010 (N04710)  400.0000 (N04720) 227.4E-15 (N04726) 2.752E-06     
+
+(N04912) 800.7E-15 (N04976)-346.8E-09 (N05851)-346.8E-09 (N10500)  400.0000     
+
+(N10510) 568.4E-15 (N10516)-15.25E-06 (N10582) 3.277E-06 (N10760) 1.551E-12     
+
+(N10780) 3.277E-06 (N26026) 3.277E-06 (N43438)-346.8E-09 (N50407) -394.8600     
+
+(N56313) -394.8600 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186) -568.0100                   (N106196) -568.0100                       
+
+(N106294) -588.0100                   (N106444)    -.0299                       
+
+(N106450) -964.3300                   (N110371) -964.3000                       
+
+(N110519) -186.4200                   (N110526) -170.9100                       
+
+(N110530) -190.8100                   
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+ABSTOL = 2e-06
+
+Convergence problem in transient analysis at Time =  2.001E-06
+         Time step =  528.0E-21, minimum allowable step size =  4.200E-18
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451)  161.0300 (N00455)    -.0032     
+
+(N00459)   19.4110 (N00560)  161.0300 (N00571)    1.3312 (N00592)  141.0300     
+
+(N01013)    -.5607 (N04710)  400.0000 (N04720) 341.1E-15 (N04726)-8.492E-06     
+
+(N04912) 510.7E-15 (N04976)-1.591E-06 (N05851)-1.591E-06 (N10500)  400.0000     
+
+(N10510) 568.4E-15 (N10516)-1.199E-06 (N10582) 6.915E-09 (N10760) 1.410E-12     
+
+(N10780) 6.958E-09 (N26026) 6.958E-09 (N43438)-1.591E-06 (N50407) -237.2200     
+
+(N56313) -237.2200 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186)  173.9400                   (N106196)  173.9400                       
+
+(N106294)  153.9400                   (N106444)    -.0299                       
+
+(N106450) -222.3800                   (N110371) -222.3500                       
+
+(N110519)  -83.7520                   (N110526)  -68.2450                       
+
+(N110530)  -88.1430                   
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+
+Convergence problem in transient analysis at Time =  2.001E-06
+         Time step =  567.2E-21, minimum allowable step size =  4.200E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =    -61.05V  \    193.84V
+    V(N00451)                 =    -61.06V  \    193.83V
+    V(N00571)                 =     4.984V  \     88.94V
+    V(N00459)                 =     23.06V  \    107.02V
+    V(N56313)                 =   -459.30V  \   -204.41V
+    V(N00592)                 =    -81.05V  \    173.84V
+    V(N04726)                 =   121.33uV  \    26.27uV
+    V(N10516)                 =   117.77uV  \    27.27uV
+    V(N01013)                 =     3.093V  \     87.04V
+    V(N50407)                 =   -459.30V  \   -204.41V
+    V(N110519)                =     97.15V  \    7.475KV
+    V(N110530)                =     92.76V  \    7.471KV
+    V(N106294)                =   -947.51V  \    3.865KV
+    V(N106186)                =   -927.51V  \    3.885KV
+    V(N106444)                =   -30.24mV  \   -29.73mV
+    V(N106450)                =   -1.324KV  \    3.488KV
+    V(N106196)                =   -927.51V  \    3.885KV
+    V(N110526)                =    112.66V  \    7.490KV
+    V(N110371)                =   -1.324KV  \    3.488KV
+
+  These supply currents failed to converge:
+
+    I(L_LgLowside1)           =    3.024mA  \    2.973mA
+    I(L_Lghighside1)          =   -85.14uA  \  -133.38uA
+    I(L_LeLowside3)           =   -2.632mA  \   -2.618mA
+    I(V_VgHighside1)          =    85.14uA  \   133.38uA
+
+  These devices failed to converge:
+    M_M6      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451)  -61.0640 (N00455)    -.0215     
+
+(N00459)   23.0640 (N00560)  -61.0520 (N00571)    4.9844 (N00592)  -81.0510     
+
+(N01013)    3.0925 (N04710)  400.0000 (N04720)-625.3E-15 (N04726) 121.3E-06     
+
+(N04912)-1.314E-12 (N04976) 792.1E-09 (N05851) 792.1E-09 (N10500)  400.0000     
+
+(N10510)-625.3E-15 (N10516) 117.8E-06 (N10582)-3.341E-06 (N10760) 1.346E-12     
+
+(N10780)-3.341E-06 (N26026)-3.341E-06 (N43438) 792.1E-09 (N50407) -459.3000     
+
+(N56313) -459.3000 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186) -927.5100                   (N106196) -927.5100                       
+
+(N106294) -947.5100                   (N106444)    -.0302                       
+
+(N106450)-1323.8000                   (N110371)-1323.8000                       
+
+(N110519)   97.1540                   (N110526)  112.6600                       
+
+(N110530)   92.7630                   
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+ABSTOL = 0.001
+VNTOL = 0.001
+
+Convergence problem in transient analysis at Time =  2.001E-06
+         Time step =  3.660E-18, minimum allowable step size =  4.200E-18
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451) -505.4000 (N00455)    -.0219     
+
+(N00459)  -16.4820 (N00560) -505.3900 (N00571)  -34.5620 (N00592) -525.3900     
+
+(N01013)  -36.4540 (N04710)  400.0000 (N04720)-852.7E-15 (N04726) 2.440E-06     
+
+(N04912) 289.9E-15 (N04976)-320.0E-09 (N05851)-320.0E-09 (N10500)  400.0000     
+
+(N10510)-852.7E-15 (N10516) 5.572E-06 (N10582) 4.929E-06 (N10760) 2.583E-12     
+
+(N10780) 4.929E-06 (N26026) 4.929E-06 (N43438)-320.0E-09 (N50407) -903.6400     
+
+(N56313) -903.6400 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186)-364.2E+03                   (N106196)-364.2E+03                       
+
+(N106294)-364.2E+03                   (N106444)    -.0231                       
+
+(N106450)-364.6E+03                   (N110371)-364.6E+03                       
+
+(N110519) 1987.2000                   (N110526) 2002.7000                       
+
+(N110530) 1982.8000                   
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+
+Time step =  250.4E-21 is too small in Transient Analysis at
+Time =  2.001E-06.  Minimum allowable step size =  250.4E-21.
+         The device which is changing too fast is L_Lghighside1.
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451) -149.1600 (N00455)    -.0219     
+
+(N00459)   26.9710 (N00560) -149.1400 (N00571)    8.8909 (N00592) -169.1400     
+
+(N01013)    6.9989 (N04710)  400.0000 (N04720)-795.8E-15 (N04726) 95.74E-06     
+
+(N04912) 270.0E-15 (N04976)-1.156E-06 (N05851)-1.156E-06 (N10500)  400.0000     
+
+(N10510)-795.8E-15 (N10516) 100.4E-06 (N10582) 2.687E-06 (N10760) 2.652E-12     
+
+(N10780) 2.687E-06 (N26026) 2.687E-06 (N43438)-1.156E-06 (N50407) -547.3900     
+
+(N56313) -547.3900 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186)  791.1500                   (N106196)  791.1500                       
+
+(N106294)  771.1500                   (N106444)    -.0247                       
+
+(N106450)  394.8300                   (N110371)  394.8600                       
+
+(N110519) 4455.1000                   (N110526) 4470.6000                       
+
+(N110530) 4450.7000                   
+
+Resuming Simulation with the following settings
+RELTOL = 0.0086
+
+Convergence problem in transient analysis at Time =  2.001E-06
+         Time step =  915.1E-21, minimum allowable step size =  4.200E-18
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451) -149.1600 (N00455)    -.0219     
+
+(N00459)   26.9710 (N00560) -149.1400 (N00571)    8.8909 (N00592) -169.1400     
+
+(N01013)    6.9989 (N04710)  400.0000 (N04720)-795.8E-15 (N04726) 95.74E-06     
+
+(N04912) 270.0E-15 (N04976)-1.156E-06 (N05851)-1.156E-06 (N10500)  400.0000     
+
+(N10510)-795.8E-15 (N10516) 100.4E-06 (N10582) 2.687E-06 (N10760) 2.652E-12     
+
+(N10780) 2.687E-06 (N26026) 2.687E-06 (N43438)-1.156E-06 (N50407) -547.3900     
+
+(N56313) -547.3900 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186)  791.1500                   (N106196)  791.1500                       
+
+(N106294)  771.1500                   (N106444)    -.0247                       
+
+(N106450)  394.8300                   (N110371)  394.8600                       
+
+(N110519) 4455.1000                   (N110526) 4470.6000                       
+
+(N110530) 4450.7000                   
+
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  2.001E-06.
+         Time step =  915.1E-21, minimum allowable step size =  4.200E-18
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451) -149.1600 (N00455)    -.0219     
+
+(N00459)   26.9710 (N00560) -149.1400 (N00571)    8.8909 (N00592) -169.1400     
+
+(N01013)    6.9989 (N04710)  400.0000 (N04720)-795.8E-15 (N04726) 95.74E-06     
+
+(N04912) 270.0E-15 (N04976)-1.156E-06 (N05851)-1.156E-06 (N10500)  400.0000     
+
+(N10510)-795.8E-15 (N10516) 100.4E-06 (N10582) 2.687E-06 (N10760) 2.652E-12     
+
+(N10780) 2.687E-06 (N26026) 2.687E-06 (N43438)-1.156E-06 (N50407) -547.3900     
+
+(N56313) -547.3900 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186)  791.1500                   (N106196)  791.1500                       
+
+(N106294)  771.1500                   (N106444)    -.0247                       
+
+(N106450)  394.8300                   (N110371)  394.8600                       
+
+(N110519) 4455.1000                   (N110526) 4470.6000                       
+
+(N110530) 4450.7000                   
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.001
+**** Param: ABSTOL = 1e-12
+**** Param: VNTOL = 1e-06
+**** Param: GMIN = 1e-12
+**** Param: TSTOP = 4.2e-06
+**** Param: TMAX = 1e-10
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 10
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-10
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+Convergence problem in transient analysis at Time =  2.001E-06
+         Time step =  915.1E-21, minimum allowable step size =  4.200E-18
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451) -149.1600 (N00455)    -.0219     
+
+(N00459)   26.9710 (N00560) -149.1400 (N00571)    8.8909 (N00592) -169.1400     
+
+(N01013)    6.9989 (N04710)  400.0000 (N04720)-795.8E-15 (N04726) 95.74E-06     
+
+(N04912) 270.0E-15 (N04976)-1.156E-06 (N05851)-1.156E-06 (N10500)  400.0000     
+
+(N10510)-795.8E-15 (N10516) 100.4E-06 (N10582) 2.687E-06 (N10760) 2.652E-12     
+
+(N10780) 2.687E-06 (N26026) 2.687E-06 (N43438)-1.156E-06 (N50407) -547.3900     
+
+(N56313) -547.3900 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186)  791.1500                   (N106196)  791.1500                       
+
+(N106294)  771.1500                   (N106444)    -.0247                       
+
+(N106450)  394.8300                   (N110371)  394.8600                       
+
+(N110519) 4455.1000                   (N110526) 4470.6000                       
+
+(N110530) 4450.7000                   
+
+Resuming Simulation with the following settings
+ITL4 = 125
+
+Convergence problem in transient analysis at Time =  2.001E-06
+         Time step =  915.1E-21, minimum allowable step size =  4.200E-18
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451) -149.1600 (N00455)    -.0219     
+
+(N00459)   26.9710 (N00560) -149.1400 (N00571)    8.8909 (N00592) -169.1400     
+
+(N01013)    6.9989 (N04710)  400.0000 (N04720)-795.8E-15 (N04726) 95.74E-06     
+
+(N04912) 270.0E-15 (N04976)-1.156E-06 (N05851)-1.156E-06 (N10500)  400.0000     
+
+(N10510)-795.8E-15 (N10516) 100.4E-06 (N10582) 2.687E-06 (N10760) 2.652E-12     
+
+(N10780) 2.687E-06 (N26026) 2.687E-06 (N43438)-1.156E-06 (N50407) -547.3900     
+
+(N56313) -547.3900 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186)  791.1500                   (N106196)  791.1500                       
+
+(N106294)  771.1500                   (N106444)    -.0247                       
+
+(N106450)  394.8300                   (N110371)  394.8600                       
+
+(N110519) 4455.1000                   (N110526) 4470.6000                       
+
+(N110530) 4450.7000                   
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+
+Convergence problem in transient analysis at Time =  2.001E-06
+         Time step =  915.1E-21, minimum allowable step size =  4.200E-18
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  380.7400 (N00451) -149.1600 (N00455)    -.0219     
+
+(N00459)   26.9710 (N00560) -149.1400 (N00571)    8.8909 (N00592) -169.1400     
+
+(N01013)    6.9989 (N04710)  400.0000 (N04720)-795.8E-15 (N04726) 95.74E-06     
+
+(N04912) 270.0E-15 (N04976)-1.156E-06 (N05851)-1.156E-06 (N10500)  400.0000     
+
+(N10510)-795.8E-15 (N10516) 100.4E-06 (N10582) 2.687E-06 (N10760) 2.652E-12     
+
+(N10780) 2.687E-06 (N26026) 2.687E-06 (N43438)-1.156E-06 (N50407) -547.3900     
+
+(N56313) -547.3900 (N106062)  400.0000                   (N106072)  381.3500    
+
+(N106186)  791.1500                   (N106196)  791.1500                       
+
+(N106294)  771.1500                   (N106444)    -.0247                       
+
+(N106450)  394.8300                   (N110371)  394.8600                       
+
+(N110519) 4455.1000                   (N110526) 4470.6000                       
+
+(N110530) 4450.7000                   
+
+Resuming could not converge the circuit, restarting it now
+Restarting Simulation with the following settings
+ITL4 = 1000
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   11.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)    0.0000 (N00455)    0.0000     
+
+(N00459)    0.0000 (N00560)    0.0000 (N00571)  400.0000 (N00592)    0.0000     
+
+(N01013)    0.0000 (N04710)  400.0000 (N04720)    0.0000 (N04726)    0.0000     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407)    0.0000     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186)    0.0000                   (N106196)    0.0000                       
+
+(N106294)    0.0000                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526)    0.0000                       
+
+(N110530)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside   0.000E+00
+    V_VDC       -4.000E+02
+    V_VgHighside1   0.000E+00
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+Convergence problem in transient analysis at Time =  1.086E-12
+         Time step =  641.2E-21, minimum allowable step size =  4.200E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =    1.272KV  \    -1.418V
+    V(N00451)                 =    1.272KV  \    -1.418V
+    V(N00571)                 =   -32.44KV  \    397.66V
+    V(N00459)                 =   -32.84KV  \    -2.344V
+    V(N00455)                 =    20.52uV  \   -3.848uV
+    V(N56313)                 =    1.272KV  \    -1.440V
+    V(N00592)                 =    1.272KV  \    -1.440V
+    V(N10780)                 =   -1.303uV  \  -199.39nV
+    V(N10582)                 =   -1.303uV  \  -199.39nV
+    V(N26026)                 =   -1.303uV  \  -199.39nV
+    V(N10516)                 =  -104.08uV  \   -1.134uV
+    V(N01013)                 =   -32.84KV  \    -2.344V
+    V(N50407)                 =    1.272KV  \    -1.440V
+    V(N110519)                =    489.92V  \    399.89V
+    V(N110530)                =     89.92V  \  -106.02mV
+    V(N106294)                =   905.97mV  \   -61.73mV
+    V(N106186)                =   927.69mV  \   -39.98mV
+    V(N106450)                =   905.97mV  \   -61.73mV
+    V(N106196)                =   927.68mV  \   -40.00mV
+    V(N110526)                =     89.92V  \  -106.01mV
+    V(N110371)                =   905.97mV  \   -61.73mV
+
+  These supply currents failed to converge:
+
+    I(L_Lcircuit)             =    82.91uA  \    80.12uA
+    I(L_Lghighside)           =    62.05uA  \    3.886uA
+    I(L_LgLowside)            =   -2.052uA  \   384.82nA
+    I(L_LeHighside)           =    25.50uA  \    83.67uA
+    I(L_LeLowside)            =   559.40nA  \  -105.07nA
+    I(L_LgLowside1)           =   204.82nA  \   217.58nA
+    I(L_Lghighside1)          =    1.615uA  \    1.779uA
+    I(L_LeLowside3)           =   -56.08nA  \   -59.56nA
+    I(V_Vbus)                 =   -82.91uA  \   -80.12uA
+    I(V_VgHighside)           =   -62.05uA  \   -3.886uA
+    I(V_VgHighside1)          =   -1.615uA  \   -1.779uA
+
+  These devices failed to converge:
+    D_D5      D_D9      M_M5      M_M6      Z_Z1      
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451) 1271.5000 (N00455) 20.52E-06     
+
+(N00459)-32.84E+03 (N00560) 1271.5000 (N00571)-32.44E+03 (N00592) 1271.5000     
+
+(N01013)-32.84E+03 (N04710)  400.0000 (N04720)-113.7E-15 (N04726) 7.835E-09     
+
+(N04912) 1.169E-12 (N04976) 9.273E-09 (N05851) 9.274E-09 (N10500)  400.0000     
+
+(N10510)-113.7E-15 (N10516)-104.1E-06 (N10582)-1.303E-06 (N10760) 714.0E-15     
+
+(N10780)-1.303E-06 (N26026)-1.303E-06 (N43438) 9.273E-09 (N50407) 1271.5000     
+
+(N56313) 1271.5000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186)     .9277                   (N106196)     .9277                       
+
+(N106294)     .9060                   (N106444)-2.048E-06                       
+
+(N106450)     .9060                   (N110371)     .9060                       
+
+(N110519)  489.9200                   (N110526)   89.9230                       
+
+(N110530)   89.9230                   
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+ABSTOL = 1.41e-09
+VNTOL = 4.47e-05
+
+Convergence problem in transient analysis at Time =  1.088E-12
+         Time step =  2.069E-18, minimum allowable step size =  4.200E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =    20.11KV  \    19.20mV
+    V(N00451)                 =    20.11KV  \    19.16mV
+    V(N00571)                 =   -5.557KV  \    400.01V
+    V(N00459)                 =   -5.957KV  \    7.912mV
+    V(N00455)                 =    1.107mV  \   -2.665uV
+    V(N56313)                 =    20.11KV  \   -2.566mV
+    V(N00592)                 =    20.11KV  \   -2.566mV
+    V(N01013)                 =   -5.957KV  \    7.912mV
+    V(N50407)                 =    20.11KV  \   -2.566mV
+    V(N110519)                =    391.97V  \    400.99V
+    V(N110530)                =    -8.031V  \   989.72mV
+    V(N106294)                =     -9.53V  \   462.67mV
+    V(N106186)                =     -9.51V  \   484.44mV
+    V(N106450)                =     -9.53V  \   462.67mV
+    V(N106196)                =     -9.51V  \   484.42mV
+    V(N110526)                =    -8.031V  \   989.72mV
+    V(N110371)                =     -9.53V  \   462.67mV
+
+  These supply currents failed to converge:
+
+    I(L_Lcircuit)             =    81.75uA  \    80.11uA
+    I(L_Lghighside)           =   147.63uA  \    3.812uA
+    I(L_LgLowside)            =  -110.70uA  \   266.47nA
+    I(L_LeHighside)           =   -60.08uA  \    83.74uA
+    I(L_LeLowside)            =    30.19uA  \   -72.80nA
+    I(L_LgLowside1)           =   291.70nA  \   210.33nA
+    I(L_Lghighside1)          =    1.793uA  \    1.769uA
+    I(L_LeLowside3)           =   -79.77nA  \   -57.58nA
+    I(V_Vbus)                 =   -81.75uA  \   -80.11uA
+    I(V_VgHighside)           =  -147.63uA  \   -3.812uA
+    I(V_VgHighside1)          =   -1.793uA  \   -1.769uA
+
+  These devices failed to converge:
+    M_M5      M_M6      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451) 20.11E+03 (N00455)     .0011     
+
+(N00459)-5956.7000 (N00560) 20.11E+03 (N00571)-5556.7000 (N00592) 20.11E+03     
+
+(N01013)-5956.7000 (N04710)  400.0000 (N04720)-56.84E-15 (N04726)-247.9E-09     
+
+(N04912) 423.9E-15 (N04976)-293.4E-09 (N05851)-293.4E-09 (N10500)  400.0000     
+
+(N10510)-56.84E-15 (N10516) 23.79E-06 (N10582)-9.671E-06 (N10760)-527.8E-15     
+
+(N10780)-9.671E-06 (N26026)-9.671E-06 (N43438)-293.4E-09 (N50407) 20.11E+03     
+
+(N56313) 20.11E+03 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186)   -9.5098                   (N106196)   -9.5098                       
+
+(N106294)   -9.5316                   (N106444)-2.917E-06                       
+
+(N106450)   -9.5316                   (N110371)   -9.5316                       
+
+(N110519)  391.9700                   (N110526)   -8.0309                       
+
+(N110530)   -8.0309                   
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+ABSTOL = 2e-06
+
+Convergence problem in transient analysis at Time =  1.089E-12
+         Time step =  888.4E-21, minimum allowable step size =  4.200E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =    18.20mV  \   -178.20V
+    V(N00451)                 =    18.09mV  \   -178.20V
+    V(N00571)                 =    400.00V  \    378.80V
+    V(N00459)                 =  -808.28uV  \    -21.20V
+    V(N56313)                 =   -3.572mV  \   -178.22V
+    V(N00592)                 =   -3.573mV  \   -178.22V
+    V(N01013)                 =  -808.28uV  \    -21.20V
+    V(N50407)                 =   -3.572mV  \   -178.22V
+    V(N110519)                =    393.00V  \    877.02V
+    V(N110530)                =    -6.996V  \    477.03V
+    V(N106294)                =    -8.768V  \     18.58V
+    V(N106186)                =    -8.746V  \     18.60V
+    V(N106450)                =    -8.768V  \     18.58V
+    V(N106196)                =    -8.746V  \     18.60V
+    V(N110526)                =    -6.996V  \    477.03V
+    V(N110371)                =    -8.768V  \     18.58V
+
+  These devices failed to converge:
+    M_M5      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)     .0181 (N00455)-119.3E-06     
+
+(N00459)-808.3E-06 (N00560)     .0182 (N00571)  400.0000 (N00592)    -.0036     
+
+(N01013)-808.3E-06 (N04710)  400.0000 (N04720)-227.4E-15 (N04726) 75.44E-06     
+
+(N04912)-786.2E-15 (N04976) 1.306E-06 (N05851) 1.306E-06 (N10500)  400.0000     
+
+(N10510)-227.4E-15 (N10516) 75.02E-06 (N10582) 813.2E-09 (N10760)-474.5E-15     
+
+(N10780) 813.2E-09 (N26026) 813.2E-09 (N43438) 1.306E-06 (N50407)    -.0036     
+
+(N56313)    -.0036 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186)   -8.7463                   (N106196)   -8.7463                       
+
+(N106294)   -8.7681                   (N106444)-12.32E-06                       
+
+(N106450)   -8.7681                   (N110371)   -8.7681                       
+
+(N110519)  393.0000                   (N110526)   -6.9959                       
+
+(N110530)   -6.9959                   
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+RELTOL = 0.0086
+ABSTOL = 0.001
+
+Convergence problem in transient analysis at Time =  1.089E-12
+         Time step =  1.373E-18, minimum allowable step size =  4.200E-18
+
+  These voltages failed to converge:
+
+    V(N00560)                 =    173.83V  \    17.71mV
+    V(N00451)                 =    173.83V  \    17.60mV
+    V(N00571)                 =   -1.176KV  \    400.01V
+    V(N00459)                 =   -1.576KV  \    11.26mV
+    V(N56313)                 =    173.80V  \   -4.064mV
+    V(N00592)                 =    173.80V  \   -4.064mV
+    V(N01013)                 =   -1.576KV  \    11.26mV
+    V(N50407)                 =    173.80V  \   -4.064mV
+    V(N110519)                =    360.64V  \    442.34V
+    V(N110530)                =    -39.36V  \     42.34V
+    V(N106294)                =    -25.45V  \    -12.60V
+    V(N106186)                =    -25.43V  \    -12.58V
+    V(N106450)                =    -25.45V  \    -12.60V
+    V(N106196)                =    -25.43V  \    -12.58V
+    V(N110526)                =    -39.36V  \     42.34V
+    V(N110371)                =    -25.45V  \    -12.60V
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)  173.8300 (N00455)-114.9E-06     
+
+(N00459)-1575.7000 (N00560)  173.8300 (N00571)-1175.7000 (N00592)  173.8000     
+
+(N01013)-1575.7000 (N04710)  400.0000 (N04720)-56.84E-15 (N04726)    0.0000     
+
+(N04912)-892.9E-15 (N04976)-4.162E-06 (N05851)-4.162E-06 (N10500)  400.0000     
+
+(N10510)-56.84E-15 (N10516)-621.3E-09 (N10582)-735.3E-09 (N10760)-666.1E-15     
+
+(N10780)-735.3E-09 (N26026)-735.3E-09 (N43438)-4.162E-06 (N50407)  173.8000     
+
+(N56313)  173.8000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186)  -25.4290                   (N106196)  -25.4290                       
+
+(N106294)  -25.4500                   (N106444)-13.50E-06                       
+
+(N106450)  -25.4500                   (N110371)  -25.4500                       
+
+(N110519)  360.6400                   (N110526)  -39.3560                       
+
+(N110530)  -39.3560                   
+
+Resuming Simulation with the following settings
+RELTOL = 0.05
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   12.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   13.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   14.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   15.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   16.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   17.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   18.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   19.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   20.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   21.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   22.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   23.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   24.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   25.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   26.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   27.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   28.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   29.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   30.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   31.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   32.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   33.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   34.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   35.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   36.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   37.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   38.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   39.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   40.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   41.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   42.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   43.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   44.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   45.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   46.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   47.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   48.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   49.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM LE =   50.0000E-09
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00440)  400.0000 (N00447)  400.0000 (N00451)-113.7E-15 (N00455)    0.0000     
+
+(N00459)-113.7E-15 (N00560)-113.7E-15 (N00571)  400.0000 (N00592)-113.7E-15     
+
+(N01013)-227.4E-15 (N04710)  400.0000 (N04720)    0.0000 (N04726)-11.64E-15     
+
+(N04912)    0.0000 (N04976)    0.0000 (N05851)    0.0000 (N10500)  400.0000     
+
+(N10510)    0.0000 (N10516)    0.0000 (N10582)    0.0000 (N10760)    0.0000     
+
+(N10780)    0.0000 (N26026)    0.0000 (N43438)    0.0000 (N50407) 364.9E-24     
+
+(N56313)    0.0000 (N106062)  400.0000                   (N106072)  400.0000    
+
+(N106186) 313.2E-21                   (N106196) 313.2E-21                       
+
+(N106294) 313.2E-21                   (N106444)    0.0000                       
+
+(N106450)    0.0000                   (N110371)    0.0000                       
+
+(N110519)  400.0000                   (N110526) 313.2E-21                       
+
+(N110530)-56.84E-15                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vbus      -8.027E-05
+    V_VgHighside  -1.355E-20
+    V_VDC       -4.000E+02
+    V_VgHighside1   2.831E-25
+    V_Vbus1     -1.800E-04
+    V_Vbus2     -4.000E+02
+
+    TOTAL POWER DISSIPATION   3.20E+05  WATTS
+
+
+
+          JOB CONCLUDED
+ AutoConverge Simulator Options
+ ITL1 = 150
+ ITL2 = 20
+ ITL4 = 1000
+ RELTOL = 0.05
+ ABSTOL = 0.001
+ VNTOL = 4.46684e-05
+ PIVTOL = 1e-13
+
+**** 07/21/24 19:33:23 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-3DPlot"  [ e:\power electronics\pspice\validation\validation-PSpiceFiles\SCHEMATIC1\3DPlot.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+ ****     CURRENT STEP                     PARAM LE =   50.0000E-09
+
+
+******************************************************************************
+
+
+
+  License check-out time            =     1155.61
+  Total job time (using Solver 1)   =      150.72
+
