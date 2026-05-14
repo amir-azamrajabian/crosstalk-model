@@ -2,7 +2,8 @@
 ### Analytical Modelling, Experimental Validation & Parametric Design
 
 **Author:** Amir Azam Rajabian  
-**Affiliation:** Power Electronics Research Group  
+**Supervisor:** Dr. Sadegh Mohsenzade  
+**Affiliation:** K. N. Toosi University of Technology  
 **Contact:** am.azrajabian@gmail.com  
 **Last updated:** May 2025
 
