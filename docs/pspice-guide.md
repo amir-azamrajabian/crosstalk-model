@@ -4,19 +4,20 @@ This page explains the PSpice simulation workflow: how the half-bridge schematic
 
 ---
 
-## Simulation Organisation
+## Simulation Organization
 
-PSpice files are organised by publication under `Simulations/PSpice/`:
+PSpice files are organized by publication under `Simulations/PSpice/`:
 
 ```
 Simulations/PSpice/
-├── [C1]_PEDSTC_2022/      ← Power-loop inductance parametric study
-├── [C2]_EPE_2022/         ← L_circ and V_bus sweeps
-├── [J1]_JESTIE_2024/      ← R_g and L_e sweeps; experimental validation
-└── [TPEL]_In_Preparation/ ← Si MOSFET (IRFP450) model; Phase 1/2 switching input
+├── [C1]_PEDSTC_2022/      <- Power-loop inductance parametric study
+├── [C2]_EPE_2022/         <- L_circ and V_bus sweeps
+└── [J1]_JESTIE_2024/      <- R_g and L_e sweeps; experimental validation
 ```
 
 Each subfolder contains the OrCAD `.opj` project file, schematic (`.DSN`), and any SPICE libraries (`.lib`) for the specific device under test.
+
+> PSpice files for the in-preparation TPEL submission are maintained in a separate private repository.
 
 ---
 
@@ -26,17 +27,17 @@ The simulation uses a standard half-bridge (phase-leg) topology:
 
 ```
      V_bus (+)
-        │
-       Q_H  ←── Gate driver (PWL voltage source V_GH)
-        │
-        ├──── Load node (L_load + R_load to negative rail)
-        │
-       Q_L  ←── Gate driver (off, V_GL = negative bias)
-        │
-     GND (−)
+        |
+       Q_H  <-- Gate driver (PWL voltage source V_GH)
+        |
+        +---- Load node (L_load + R_load to negative rail)
+        |
+       Q_L  <-- Gate driver (off, V_GL = negative bias)
+        |
+     GND (-)
 ```
 
-**Key parasitics modelled explicitly:**
+**Key parasitics modeled explicitly:**
 - Power-loop inductance: `L_circ` in series with the DC bus
 - Gate-lead inductance: `L_g` in series with each gate connection
 - Emitter/source inductance: `L_e` between emitter terminal and PCB ground plane
@@ -50,7 +51,7 @@ The simulation uses a standard half-bridge (phase-leg) topology:
 
 Cadence PSpice parametric sweeps are set up using the `PARAM` part and the `.STEP` SPICE directive:
 
-### Gate Resistance Sweep (R_g, used in [J1] and [TPEL])
+### Gate Resistance Sweep (R_g, used in [J1])
 ```spice
 .PARAM Rgate = 10
 .STEP PARAM Rgate LIST 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
@@ -76,18 +77,18 @@ After a transient simulation:
 
 1. Open **Probe** (the PSpice waveform viewer).
 2. Add the desired measurement: typically `V(gate_QL) - V(emitter_QL)` for V_ge, or `V(collector_QL)` for V_CE.
-3. For parametric runs, use **Measure → Peak** or the **Goal Function** editor to extract the peak value per sweep step.
-4. Export: **File → Export → CSV...** or use the `Eval Goal Function` to create a table.
+3. For parametric runs, use **Measure > Peak** or the **Goal Function** editor to extract the peak value per sweep step.
+4. Export: **File > Export > CSV...** or use the `Eval Goal Function` to create a table.
 
 **CSV format returned by the scripts:**
 ```
 Row 1:  header / parameter labels
 Row 2:  peak values for each sweep step (one value per column)
-Cols:   2 … N+1 for N sweep steps
+Cols:   2 to N+1 for N sweep steps
 ```
 
 For example, `Positive_Fluctuation_RGate.csv` contains:
-- Row 2, columns 2–22: positive V̂_ge values at R_g = 5, 6, … 25 Ω (21 points)
+- Row 2, columns 2-22: positive V_ge values at R_g = 5, 6, ... 25 Ohm (21 points)
 
 This is read in MATLAB as:
 ```matlab
@@ -99,7 +100,7 @@ V   = sim(2, 2:22);   % 21 peak values
 
 ## Using the Analytically-Derived PWL Source
 
-The script `VCE_Waveform_Generator.m` (and `SwitchingInput_Generator_TPEL.m`) exports a PSpice-compatible piecewise-linear (PWL) file `Input_Values.txt`.
+The script `VCE_Waveform_Generator.m` exports a PSpice-compatible piecewise-linear (PWL) file `Input_Values.txt`.
 
 **File format:**
 ```
@@ -113,7 +114,7 @@ Values are printed with 35-decimal-place precision to avoid PSpice interpolation
 1. Place a `VPWL_FILE` part (from the PSpice source library).
 2. Set the `FILE` property to the full path of `Input_Values.txt`.
 3. Connect it in place of the standard gate-driver source for the high-side switch Q_H.
-4. Run a transient simulation with `TMAX = 2µs`, `TSTEP = 0.1ns`.
+4. Run a transient simulation with `TMAX = 2us`, `TSTEP = 0.1ns`.
 
 This allows the PSpice simulation to use the exact analytically-derived V_CE waveform as its stimulus, ensuring that the model and simulation operate under identical input conditions.
 
@@ -123,9 +124,9 @@ This allows the PSpice simulation to use the exact analytically-derived V_CE wav
 
 The double-pulse test verifies the test-bench operation and provides the realistic inductor current profile at the instant of commutation:
 
-1. **First pulse** (e.g., 50 µs): Q_H conducts; inductor L_load stores energy; I_L ramps up linearly.
-2. **Off period** (e.g., 10 µs): freewheeling diode D_FW conducts; I_L remains approximately constant.
-3. **Second pulse** (e.g., 2 µs): Q_H turns on against the full load current; the crosstalk transient of interest occurs at the beginning of this pulse.
+1. **First pulse** (e.g., 50 us): Q_H conducts; inductor L_load stores energy; I_L ramps up linearly.
+2. **Off period** (e.g., 10 us): freewheeling diode D_FW conducts; I_L remains approximately constant.
+3. **Second pulse** (e.g., 2 us): Q_H turns on against the full load current; the crosstalk transient of interest occurs at the beginning of this pulse.
 
 The simulation waveform is exported and verified in `Experimental_Analysis_JESTIE.m` (Figure 5), showing gate-drive voltage and inductor current for the full DPT sequence.
 
@@ -136,7 +137,7 @@ The simulation waveform is exported and verified in `Experimental_Analysis_JESTI
 Experimental captures are taken with a Tektronix oscilloscope and exported as CSV. File structure:
 
 ```
-Rows 1–17:   Header block (instrument settings, date, units, etc.)
+Rows 1-17:   Header block (instrument settings, date, units, etc.)
 Row 18:      First data sample
 Row 5017:    Last data sample  (5000 samples total)
 Column 1:    Time [s]
@@ -150,4 +151,4 @@ t = sim(18:5017, 1);   % time vector
 V = sim(18:5017, 2);   % voltage waveform
 ```
 
-**Probe conditioning:** Raw waveforms include DC offset (up to ±20 V due to differential probe zeroing) and nonlinear saturation at large amplitudes. Piecewise scaling corrections in `GateResistance_Comparison_JESTIE.m` restore the true waveform, calibrated by injecting a known-amplitude reference signal through the same probe chain.
+**Probe conditioning:** Raw waveforms include DC offset (up to +/-20 V due to differential probe zeroing) and nonlinear saturation at large amplitudes. Piecewise scaling corrections in `GateResistance_Comparison_JESTIE.m` restore the true waveform, calibrated by injecting a known-amplitude reference signal through the same probe chain.
